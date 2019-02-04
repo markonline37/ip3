@@ -1,0 +1,27 @@
+//What are the best tools for web-based data visualization
+https://www.quora.com/What-are-the-best-tools-for-web-based-data-visualization
+
+//one dataset visualised 25 different ways
+https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/
+
+//Top Brewery Road Trip, Routed Algorithmically
+https://flowingdata.com/2015/10/26/top-brewery-road-trip-routed-algorithmically/
+
+//Top 20 web based visualisation tools
+https://bigdata-madesimple.com/20-web-based-visualisation-tools/
+
+//What is the best alternative to D3.js?
+https://www.slant.co/options/10577/alternatives/~d3-js-alternatives
+
+//d3 stuff
+D3: Data Driven Documents: https://d3js.org/
+Blockbuilder: https://blockbuilder.org/    https://blockbuilder.org/search
+
+//something
+https://plot.ly/
+
+//weird shit
+https://toplink.weforum.org/knowledge/explore
+
+//that moviestar director line thing
+http://www.nytimes.com/newsgraphics/2013/09/07/director-star-chart/index.html
