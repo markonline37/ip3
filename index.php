@@ -7,6 +7,7 @@ include('inc/header.php');
 
 //shit goes here
 //wooo - this is my test.
+//and this is mine
 
 <?php
 include('inc/footer.php'); 
