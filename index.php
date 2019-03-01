@@ -5,7 +5,7 @@ $currentPage = 'homepage';
 include('inc/header.php');
 ?>
 
-//shit goes here
+Hello World!
 
 <?php
 include('inc/footer.php'); 
