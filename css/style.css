@@ -176,3 +176,8 @@ li a.navigation:hover {
 	right: 30px;
 	z-index: 1;
 }
+
+#map {
+    height: 70%;
+    width: 70%;
+}
