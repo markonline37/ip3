@@ -7,8 +7,7 @@ include('inc/header.php');
 ?>
 
 	<script type="text/javascript" src="js/earthquake.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVhtMJumz-cmads_MZCOr-cGt9_UZynZM&callback=initMap">
-    </script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVhtMJumz-cmads_MZCOr-cGt9_UZynZM&callback=initMap"></script>
     <div id="other">
         <header>
             <h1>Earthquake Mapping</h1>
