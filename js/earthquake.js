@@ -19,17 +19,19 @@ $(document).ready(function () {
             center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
             mapTypeId: 'terrain' // can be any valid type
         });
+        // The following uses JQuery library
         $.ajax({
             // The URL of the specific data required
-            url: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+            url: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojson",
 
             // Called if there is a problem loading the data
             error: function () {
                 $('#info').html('<p>An error has occurred</p>');
             },
-
-            // The data has succesfully loaded
+            // Called when the data has succesfully loaded
             success: function (data) {
+                i = 0;
+                var markers = []; // keep an array of Google Maps markers, to be used by the Google Maps clusterer
                 $.each(data.features, function (key, val) {
                     // Get the lat and lng data for use in the markers
                     var coords = val.geometry.coordinates;
@@ -37,18 +39,12 @@ $(document).ready(function () {
                     // Now create a new marker on the map
                     var marker = new google.maps.Marker({
                         position: latLng,
-                        map: map,
-                        label: val.properties.mag.toString() // Whatever label you like. This one is the magnitude of the earthquake
+                        map: map
                     });
-                    // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
-                    var infowindow = new google.maps.InfoWindow({
-                        content: "<h3>" + val.properties.title + "</h3><p><a href='" + val.properties.url + "'>Details</a></p>"
-                    });
-                    marker.addListener('click', function (data) {
-                        infowindow.open(map, marker); // Open the Google maps marker infoWindow
-                    });
+                    markers[i++] = marker; // Add the marker to array to be used by clusterer
                 });
-
+                var markerCluster = new MarkerClusterer(map, markers,
+                    { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
             }
         });
     });

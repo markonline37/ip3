@@ -1,11 +1,10 @@
 <?php 
-$title = 'Weather Page';
+$title = 'Weather Data';
 $description = 'Weather Visualisation';
-$currentPage = 'weather';
 include('inc/header.php');
 ?>
 
-Hello World!
+<h1>Weather</h1>
 
 <?php
 include('inc/footer.php'); 

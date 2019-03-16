@@ -3,6 +3,10 @@ window.onscroll = function() {
     scrollFunction();
 };
 
+window.onload = function() {
+    displayActive();
+}
+
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("bottom_button").style.display = "block";
@@ -24,4 +28,3 @@ function displayMenu() {
         x.className = "topnav";
     }
 };
-

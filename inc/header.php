@@ -21,30 +21,30 @@
 	<div class="topnav" id="myTopnav">
 		<a id="logoholder" href="index.php"><img id="logo" src="images/logo.png" alt="logo"></a>
 		<a href="index.php">Home</a>
-		<a href="aboutus.php">About Us</a>
+		<a id="aboutus" href="aboutus.php">About Us</a>
 		<div class="dropdown">
-			<button class="dropbtn">Data Visualisation <i class="fa fa-caret-down"></i></button>
+			<button id="visualisation" class="dropbtn">Data Visualisation <i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-content">
-				<a href="earthquake.php">Earthquake</a>
-				<a href="weather.php">Weather</a>
-				<a href="videogames.php">Video Games</a>
-				<a href="hearthstone.php">Hearthstone</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
+				<a id="earthquake" href="earthquake.php">Earthquake</a>
+				<a id="weather" href="weather.php">Weather</a>
+				<a id="movies" href="movies.php">Movies</a>
+				<a id="hearthstone" href="hearthstone.php">Hearthstone</a>
+				<a id="airports" href="airports.php">Airports</a>
+				<a id="football" href="football.php">Football</a>
 			</div>
 		</div>
 		<div class="dropdown">
-			<button class="dropbtn">Tutorials  <i class="fa fa-caret-down"></i></button>
+			<button id="tutorial" class="dropbtn">Tutorials  <i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-content">
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
-				<a href=".......">.......</a>
+				<a id="javascripttutorial" href="javascripttutorial.php">Javascript tutorial</a>
+				<a id="geojsontutorial" href="geojsontutorial.php">GEOJson Tutorial</a>
+				<a id="earthquaketutorial" href="earthquaketutorial.php">Earthquake Tutorial</a>
+				<a id="weathertutorial" href="weathertutorial.php">Weather Tutorial</a>
+				<a id="moviestutorial" href="moviestutorial.php">Movies Tutorial</a>
+				<a id="hearthstonetutorial" href="hearthstonetutorial.php">Hearthstone Tutorial</a>
+				<a id="airportstutorial" href="airportstutorial.php">Airports Tutorial</a>
+				<a id="footballtutorial" href="footballtutorial.php">Football Tutorial</a>
 			</div>
 		</div>	
-		<a href="javascript:void(0);" class="icon" onclick="displayMenu()"><i class="fa fa-bars"></i></a>
+		<a id="icon" href="javascript:void(0);" class="icon" onclick="displayMenu()"><i class="fa fa-bars"></i></a>
 	</div>
