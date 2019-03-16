@@ -19,15 +19,32 @@
 <div id="centre_website">
 <div id="content">
 	<div class="topnav" id="myTopnav">
-		<a href="index.php"><img id="logo" src="images/logo.png" alt="logo"></a>
-		<a href="index.php" <?php if($currentPage === "homepage") echo "class=\"activeMenu\"" ?>>Home</a>
-		<a href="aboutus.php" <?php if($currentPage === "aboutus") echo "class=\"activeMenu\"" ?>>About Us</a>
-		<a href="earthquake.php" <?php if($currentPage === "earthquake") echo "class=\"activeMenu\"" ?>>Earthquake</a>
-		<a href="weather.php" <?php if($currentPage === "weather") echo "class=\"activeMenu\"" ?>>Weather</a>
-		<a href="videogames.php" <?php if($currentPage === "videogames") echo "class=\"activeMenu\"" ?>>Video Games</a>
-		<a href="hearthstone.php" <?php if($currentPage === "hearthstone") echo "class=\"activeMenu\"" ?>>Hearthstone</a>
-		<a href="......." <?php if($currentPage === "......") echo "class=\"activeMenu\"" ?>>.......</a>
-		<a href="......." <?php if($currentPage === "......") echo "class=\"activeMenu\"" ?>>.......</a>
-		<a href="tutorial.php" <?php if($currentPage === "tutorial") echo "class=\"activeMenu\"" ?>>Tutorials</a>
-		<a href="javascript:void(0);" class="icon" onclick="displayMenu()"><i class="fa fa-bars fa-2x"></i></a>
+		<a id="logoholder" href="index.php"><img id="logo" src="images/logo.png" alt="logo"></a>
+		<a href="index.php">Home</a>
+		<a href="aboutus.php">About Us</a>
+		<div class="dropdown">
+			<button class="dropbtn">Data Visualisation <i class="fa fa-caret-down"></i></button>
+			<div class="dropdown-content">
+				<a href="earthquake.php">Earthquake</a>
+				<a href="weather.php">Weather</a>
+				<a href="videogames.php">Video Games</a>
+				<a href="hearthstone.php">Hearthstone</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Tutorials  <i class="fa fa-caret-down"></i></button>
+			<div class="dropdown-content">
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+				<a href=".......">.......</a>
+			</div>
+		</div>	
+		<a href="javascript:void(0);" class="icon" onclick="displayMenu()"><i class="fa fa-bars"></i></a>
 	</div>

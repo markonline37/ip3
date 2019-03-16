@@ -47,84 +47,12 @@ h1 {
 	margin-bottom: 0px;
 }
 
-.main_button {
-	background-color: #0d47a1;
-	color: #f8f8f2;
-	border: none;
-	padding: 8px 15px;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	display: inline-block;
-	font-size: 24px;
-	box-shadow: 5px 5px black;
-	white-space: nowrap;
-	margin-bottom: 10px;
-}
-
-.main_button:hover {
-	background-color: #333;
-	margin-left: 3px;
-	margin-top: 3px;
-	box-shadow: 2px 2px black;
-	margin-bottom: 7px;
-}
-
-.accordion {
-	background-color: #333;
-	color: white;
-	cursor: pointer;
-	padding-top: 18px;
-	padding-left: 18px;
-	padding-bottom: 8px;
-	width: 100%;
-	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
-	transition: 0.4s;
-	font-weight: bold;
-}
-
-.accordion:hover {
-	background-color: #0d47a1; 
-	color: white;
-}
-
-.active {
-	background-color: #0d47a1; 
-	color: white;
-}
-
-.active:hover {
-	background-color: #272822;
-	color: white;
-}
-
-.active:hover:after {
-	content: url(../images/dropdownup.png);
-	float: right;
-}
-
-.accordion:after{
-	content: url(../images/dropdowndown.png);
-	float: right;
-}
-
-.panel {
-	padding: 0 18px;
-	background-color: white;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
-}
-
 .center {
 	text-align: center;
 }
 
 .top_button {
-	background-color: #0d47a1;
+	background-color: #333;
 	color: #f8f8f2;
 	border: none;
 	padding: 8px 15px;
@@ -154,30 +82,12 @@ h1 {
 	z-index: 1;
 }
 
-#map {
-    height: 70%;
-    width: 70%;
-    position:inherit
-}
-
-#other {
-    height: auto;
-    width: 50%;
-}
-
-.profile-image {
-	float: left;
-	height: 150px;
-	width: auto;
-	margin-right: 20px;
-	margin-top: 3px;
-}
-
 /* For desktop: */
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 950px) {
 	.col-1 {width: 10%;}
 	.col-2 {width: 20%;}
 	.col-3 {width: 30%;}
+	.col-third {width: 33.33%;}
 	.col-4 {width: 40%;}
 	.col-5 {width: 50%;}
 	.col-6 {width: 60%;}
