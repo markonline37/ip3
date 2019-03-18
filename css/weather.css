@@ -1,0 +1,21 @@
+#map {
+    height: 50%;
+    width: 100%;
+}
+
+#other {
+    height: auto;
+    width: 50%;
+}
+
+#weatherImage {
+    margin-top: 10px;
+    border: 1px solid #5DBCD2;
+    min-height: 64px;
+    min-width: 64px;
+    max-width: 64px;
+}
+
+.error {
+	color: red;
+}
