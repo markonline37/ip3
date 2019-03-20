@@ -11,7 +11,7 @@ function initMap() {
 
 function drawMap(input) {
     input = input.replace(" ", "%20");
-    var address = "http://api.apixu.com/v1/current.json?key=c0ff85500cc74e2a8b1212317191703&q=" + input;
+    var address = "http://api.apixu.com/v1/forecast.json?key=c0ff85500cc74e2a8b1212317191703&q=" + input + "&days=6";
     $.ajax({
         url: address,
         error: function() {
@@ -19,6 +19,39 @@ function drawMap(input) {
             console.log("AWWW SHEEEET");
         },
         success: function(data){
+            document.getElementById("weather-container").innerHTML = "";
+            var i;
+            for (i = 0; i < data.forecast.forecastday.length; i++) {
+                var sb = "<button class=\"accordion\">";
+                if(i===0){
+                    sb+="Now";
+                } else if(i===1){
+                    sb+="Tomorrow";
+                } else {
+                    var date = data.forecast.forecastday[i].date;
+                    var year = date.substring(4, 0);
+                    var month = date.substring(5, 7);
+                    var day = date.substring(8, 10);
+                    sb+=day+"/"+month+"/"+year;
+                }
+                sb+="</button>\n<div class=\"panel\">\n";
+                sb+="<img id=\"weather-image\" src=\"http:";
+                sb+=data.forecast.forecastday[i].day.condition.icon;
+                sb+="\" alt=\""+data.forecast.forecastday[i].day.condition.text+"\">\n<br>\n";
+                
+                if(i===0){
+                    sb+="Temperature: "+data.current.temp_c+"°C\n<br>\n";
+                } else {
+                    sb+="Temperature: "+data.forecast.forecastday[i].day.avgtemp_c+"°C\n<br>\n";
+                }
+                
+                sb+="</div>\n";
+                document.getElementById("weather-container").innerHTML += sb;
+            }
+
+            //----------------------------------------------
+            //add more weather shit here.
+
             var lat = data.location.lat;
             var lon = data.location.lon;
             map = new google.maps.Map(document.getElementById('map'), {
@@ -40,8 +73,30 @@ function drawMap(input) {
                 content: "Location: "+dataName+"<br>Temperature: "+temperature+"°C<br>Condition: "+condition+"<br>Local Time: "+localtime
             });
             infowindow.open(map, marker);
+        },
+        complete: function(data) {
+            accordionListener();
         }
     });
+}
+
+function accordionListener() {
+    var acc = document.getElementsByClassName("accordion");
+    var panel2 = acc[0].nextElementSibling;
+    acc[0].classList.add("active");
+    panel2.style.maxHeight = (panel2.scrollHeight*4) + "px";
+
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
 }
 
 function searchByName() {
