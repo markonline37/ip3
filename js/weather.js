@@ -17,8 +17,9 @@ function drawMap(input) {
 
     //if error occured display error message
     if(error){
-        document.getElementById("info").innerHTML = "Error occured, please try again or contact systems administrator";
+        document.getElementById("info").innerHTML = "Error occured, please reload page or contact systems administrator";
         error = false;
+        return;
     } else {
         document.getElementById("info").innerHTML = "";
     }
