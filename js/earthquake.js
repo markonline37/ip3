@@ -35,7 +35,7 @@ var quakeFeeds = {
     },
     "past month": {
         "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
-        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojson",
+        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojso n",
         "all 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson",
         "all 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
         "all significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
@@ -94,6 +94,12 @@ $(document).ready(function () {
                         map: map
                     });
                     markers[i++] = marker; // Add the marker to array to be used by clusterer
+                    var infowindow = new google.maps.InfoWindow({
+                        content: "<h3>" + val.properties.title + "</h3><p><a href='" + "locationinfo.php" + "?lat=" + coords[1] + "&long=" + coords[0] + "'target='_blank'" + ">Details</a></p>"
+                    });
+                    marker.addListener('click', function (data) {
+                        infowindow.open(map, marker); // Open the Google maps marker infoWindow
+                    });
                 });
                 var markerCluster = new MarkerClusterer(map, markers,
                     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
