@@ -4,21 +4,40 @@ ip = "31.205.14.217";
 var map;
 //bool to check if map has changed
 var changed = false;
+var error = false;
 
+//required function with google maps - by default on page load center map based on user's IP address
 function initMap() {
     drawMap(ip);
 }
 
 function drawMap(input) {
+    //replace spaces with URL friendly characters
     input = input.replace(" ", "%20");
-    var address = "http://api.apixu.com/v1/forecast.json?key=c0ff85500cc74e2a8b1212317191703&q=" + input + "&days=6";
+
+    //if error occured display error message
+    if(error){
+        document.getElementById("info").innerHTML = "Error occured, please try again or contact systems administrator";
+        error = false;
+    } else {
+        document.getElementById("info").innerHTML = "";
+    }
+    
+    //make a request to server via php to get the data (to hide the API keys)
     $.ajax({
-        url: address,
+        type: "POST",
+        url: "script/weather-load.php",
+        data: {phpinput: input},
         error: function() {
-            //error - update ********************************************************
-            console.log("AWWW SHEEEET");
+            //load default view and show error
+            error = true;
+            drawMap(ip);
         },
-        success: function(data){
+        success: function(json_data){
+            //parse data returned from php
+            var data = $.parseJSON(json_data);
+
+            //create and populate the forecast container
             document.getElementById("weather-container").innerHTML = "";
             var i;
             for (i = 0; i < data.forecast.forecastday.length; i++) {
@@ -35,23 +54,35 @@ function drawMap(input) {
                     sb+=day+"/"+month+"/"+year;
                 }
                 sb+="</button>\n<div class=\"panel\">\n";
-                sb+="<img id=\"weather-image\" src=\"http:";
+                sb+="<table class=\"weather-table\">\n";
+                sb+="<tr>\n<td rowspan=\"7\">\n<img id=\"weather-image\" src=\"http:";
                 sb+=data.forecast.forecastday[i].day.condition.icon;
-                sb+="\" alt=\""+data.forecast.forecastday[i].day.condition.text+"\">\n<br>\n";
+                sb+="\" alt=\""+data.forecast.forecastday[i].day.condition.text+"\">\n</td>\n";
                 
                 if(i===0){
-                    sb+="Temperature: "+data.current.temp_c+"°C\n<br>\n";
+                    sb+="<td>\nCondition Now:\n</th>\n<th>\n"+data.current.condition.text+"\n</td>\n</tr>\n";
+                    sb+="<tr>\n<td>\nTemperature Now:\n</th>\n<th>\n"+data.current.temp_c+"°C\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nWind Speed Now:\n</th>\n<th>\n"+data.current.gust_mph+" MPH\n</th>\n</td>\n";
+                    if(data.current.is_day){
+                        sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunset+"\n</th>\n</td>\n";
+                    }
                 } else {
-                    sb+="Temperature: "+data.forecast.forecastday[i].day.avgtemp_c+"°C\n<br>\n";
+                    sb+="<td>\nCondition:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.condition.text+"\n</td>\n</tr>\n";
+                    sb+="<tr>\n<td>\nMinimum Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.mintemp_c+"°C\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nAverage Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.avgtemp_c+"°C\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nMaximum Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.maxtemp_c+"°C\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nWind Speed (Max):\n</th>\n<th>\n"+data.forecast.forecastday[i].day.maxwind_mph+" MPH\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nSunrise:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunrise+"\n</th>\n</td>\n";
+                    sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunset+"\n</th>\n</td>\n";
                 }
+
                 
+                sb+="</table>\n";
                 sb+="</div>\n";
                 document.getElementById("weather-container").innerHTML += sb;
             }
 
-            //----------------------------------------------
-            //add more weather shit here.
-
+            //centre the map on the location derived by input
             var lat = data.location.lat;
             var lon = data.location.lon;
             map = new google.maps.Map(document.getElementById('map'), {
@@ -59,6 +90,7 @@ function drawMap(input) {
                 center: new google.maps.LatLng(lat, lon),
                 mapTypeId: 'terrain'
             });
+            //put an icon, marker, infowindow, and some basic information on the map
             var image = "http:" + data.current.condition.icon;
             var marker = new google.maps.Marker({
                 position: {lat: lat, lng: lon},
@@ -75,14 +107,17 @@ function drawMap(input) {
             infowindow.open(map, marker);
         },
         complete: function(data) {
+            //only place listener after loading is finished or else the heights of accordion aren't accurate
             accordionListener();
         }
     });
 }
 
+//accordion listener to be called after ajax request is complete
 function accordionListener() {
     var acc = document.getElementsByClassName("accordion");
     var panel2 = acc[0].nextElementSibling;
+    //automatically sets the first panel "active" (not hidden)
     acc[0].classList.add("active");
     panel2.style.maxHeight = (panel2.scrollHeight*4) + "px";
 
@@ -151,75 +186,3 @@ function clearLatLon() {
         drawMap(ip);
     }
 }
-
-$(document).ready(function () {
-
-    $('#earthquakes').click(function () {
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 2,
-            center: new google.maps.LatLng(2.8, -187.3),
-            mapTypeId: 'terrain'
-        });
-        $.ajax({
-            url: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson", //Unused example: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2018-01-01&endtime=2018-01-02",
-            error: function () {
-                $('#info').html('<p>An error has occurred</p>');
-            },
-
-            success: function (data) {
-
-                $.each(data.features, function (key, val) {
-                    var coords = val.geometry.coordinates;
-                    lat = coords[1]; // geojson uses (lng, lat) ordering so lat stored at coords[1]
-                    lng = coords[0]; // lng stored at coords[0]
-
-                    var latLng = new google.maps.LatLng(lat, lng);
-                    var marker = new google.maps.Marker({
-                        position: latLng,
-                        map: map,
-                        label: val.properties.mag.toString()
-                    });
-                    the_href = val.properties.url + "\'" + ' target=\'_blank\'';
-                    var infowindow = new google.maps.InfoWindow({
-                        content: "We access some external data (in this case it is weather) when we click on a marker. We update the page with the weather information. This method is useful for any data API that can be searched using a lat,lon coordinate."
-                    });
-                    marker.addListener('click', function () {
-                        // We use the lat and lon as the parameters in the API call to weather service
-                        var lat = marker.position.lat();
-                        var lng = marker.position.lng();
-                        // You need to use the FREE signup at https://www.apixu.com/ to get a key for the Weather URL below
-                        theURL = 'http://api.apixu.com/v1/current.json?key=c0ff85500cc74e2a8b1212317191703&q=' + lat.toFixed(4) + ',' + lng.toFixed(4);
-                        $.ajax({
-                            url: theURL,
-                            success: function (data) {
-                                image = new Image();
-                                if (data.error) {
-                                    image.src = "http://via.placeholder.com/64x64?text=%20"; // Error, so we use blank image for weather. See 'error:' below for another way to include a small blank image
-                                }
-                                else {
-                                    image.src = "http:" + data.current.condition.icon; // icon is specified within the data
-
-                                    $('#weatherInfo').html('<p>' + data.current.condition.text + '</p>'); // current weather in text format
-                                }
-                                image.onload = function () {
-                                    $('#weatherImage').empty().append(image);
-                                };
-
-                            },
-                            error: function () { // Weather service could not provide weather for requested lat,lon world location
-                                image = new Image();
-                                // A local 64*64 transparent image. Generated from the useful site: http://png-pixel.com/
-                                image.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAPElEQVR42u3OMQEAAAgDIJfc6BpjDyQgt1MVAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBgXbgARTAX8ECcrkoAAAAAElFTkSuQmCC";
-                                image.onload = function () {
-                                    //set the image into the web page
-                                    $('#weatherImage').empty().append(image);
-                                };
-                            }
-                        });
-                        infowindow.open(map, marker);
-                    });
-                });
-            }
-        });
-    });
-});

@@ -38,6 +38,7 @@ include('inc/header.php');
 		</div>
 	</div>
 </div>
+<div id="info"></div>
 <div class="row">
 	<div class="center">
 		<div class="col-10" id="weather-container">

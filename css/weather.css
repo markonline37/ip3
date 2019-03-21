@@ -48,3 +48,14 @@
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
 }
+
+.weather-table {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.weather-table tr, th{
+	text-align: left;
+	font-weight: normal;
+}
