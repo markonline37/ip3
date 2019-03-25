@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php echo($title); ?></title>
-	<?php echo"<meta name=\"description\" content=\"".$description."\""?>
+	<?php echo"<meta name=\"description\" content=\"".$description."\">"?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link href="css/style.css" rel="stylesheet" type="text/css">

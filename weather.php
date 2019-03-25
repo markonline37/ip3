@@ -16,30 +16,29 @@ include('inc/header.php');
 		<h5>Weather by location</h5>
 		<br>
 		<div class="center">
-			<form>
-				<input type="text" class="search" id="location-name" placeholder="Enter a location name">
-				<button type="button" class="button" onclick="searchByName()">Search</button> 
-				<button type="button" class="button" onclick="clearName()">Clear</button><br>
-				<div class="error" id="name-error"><br></div>
-			</form>
+			<input type="text" class="search" id="location-name" placeholder="Enter a location name" onkeydown="submitSearchName(event)">
+			<button type="button" class="button" type="submit" onclick="searchByName()">Search</button> 
+			<button type="button" class="button" type="submit" onclick="clearSearch()">Clear</button><br>
+			<div class="error" id="name-error"><br></div>
 		</div>
 	</div>
 	<div class="col-6">
 		<h5>Weather by Latitude and Longitude</h5>
 		<br>
 		<div class="center">
-			<form>
-				<input type="text" class="search" id="location-latitude" placeholder="Enter latitude">
-				<input type="text" class="search" id="location-longitude" placeholder="Enter longitude">
-				<button type="button" class="button" onclick="searchByLatLon()">Search</button> 
-				<button type="button" class="button" onclick="clearLatLon()">Clear</button><br>
-				<div class="error" id="latlon-error"><br></div>
-			</form>
+			<input type="text" class="search" id="location-latitude" placeholder="Enter latitude" onkeydown="submitSearchLotLan(event)">
+			<input type="text" class="search" id="location-longitude" placeholder="Enter longitude" onkeydown="submitSearchLotLan(event)">
+			<button type="button" class="button" type="submit" onclick="searchByLatLon()">Search</button> 
+			<button type="button" class="button" type="submit" onclick="clearSearch()">Clear</button><br>
+			<div class="error" id="latlon-error"><br></div>
 		</div>
 	</div>
 </div>
-<div id="info"></div>
+
 <div class="row">
+	<div class="col-10">
+		<div class="error" id="info"></div>
+	</div>
 	<div class="center">
 		<div class="col-10" id="weather-container">
 
