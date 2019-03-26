@@ -29,7 +29,7 @@
 				<a id="weather" href="weather.php">Weather</a>
 				<a id="movies" href="movies.php">Movies</a>
 				<a id="hearthstone" href="hearthstone.php">Hearthstone</a>
-				<a id="airports" href="airports.php">Airports</a>
+				<a id="audio" href="audio.php">Audio</a>
 				<a id="football" href="football.php">Football</a>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 				<a id="weathertutorial" href="weathertutorial.php">Weather Tutorial</a>
 				<a id="moviestutorial" href="moviestutorial.php">Movies Tutorial</a>
 				<a id="hearthstonetutorial" href="hearthstonetutorial.php">Hearthstone Tutorial</a>
-				<a id="airportstutorial" href="airportstutorial.php">Airports Tutorial</a>
+				<a id="audiotutorial" href="audiotutorial.php">Audio Tutorial</a>
 				<a id="footballtutorial" href="footballtutorial.php">Football Tutorial</a>
 			</div>
 		</div>	
