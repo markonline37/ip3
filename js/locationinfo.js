@@ -1,3 +1,4 @@
+var errorText = "";
 function geocode(input){
 	input = input.replace(" ", "%20");
 	  $.ajax({
@@ -5,20 +6,22 @@ function geocode(input){
 	    method: 'POST',
 	    data: {phpinput: input},
 	    dataType: 'json',
-	    statusCode: {
-	      200: function(response){  // success
-	      	$('#resultJson').append(JSON.stringify("Continent: " + response.results[0].components.continent));
-	      	$('#resultJson').append(JSON.stringify("Country: " + response.results[0].components.country));
-	      	$('#resultJson').append(JSON.stringify("State: " + response.results[0].components.state));
-	      	$('#resultJson').append(JSON.stringify("Currency: " + response.results[0].annotations.currency.name));
-	      	$('#resultJson').append(JSON.stringify("Symbol: " + response.results[0].annotations.currency.symbol));          	
+
+	      success: function(response){  // success
+	      	$('#resultJson').append("Continent: " + response.results[0].components.continent + "<br>");
+	      	$('#resultJson').append("Country: " + response.results[0].components.country + "<br>");
+	      	$('#resultJson').append("State: " + response.results[0].components.state + "<br>");
+	      	$('#resultJson').append("Currency: " + response.results[0].annotations.currency.name + "<br>");
+	      	$('#resultJson').append("Symbol: " + response.results[0].annotations.currency.symbol + "<br>");          	
 
 	      	//response.results[1].confidence
 	      },
-	      402: function(){
-	        alert('hit free-trial daily limit');
+	      error: function(){
+	        errorText = "Error occured, please reload page or contact systems administrator";
+	        document.getElementById("info").innerHTML = errorText;
+
 	      }
-	    }
+	    
 	  });
 }
 

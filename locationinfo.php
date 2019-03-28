@@ -9,6 +9,7 @@ include('inc/header.php');
 	var lat = <?php echo $lat ?>;
 	var long = <?php echo $long ?>;
 </script>
+<link href="css/locationinfo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/locationinfo.js"></script>
 
