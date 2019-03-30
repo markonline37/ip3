@@ -1,74 +1,103 @@
 var map;
 //initMap() called when Google Maps API code is loaded - when web page is opened/refreshed 
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
-        mapTypeId: 'terrain' // can be any valid type
-    }); 
+    populate();
 }
 
-var thelocation;
-var titleName;
-
 var quakeFeeds = {
-    "past hour": {
-        "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
-        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson",
-        "all 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.geojson",
-        "all 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_hour.geojson",
-        "all significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson"
+    "Past Hour": {
+        "All Earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+        "All 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson",
+        "All 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.geojson",
+        "All 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_hour.geojson",
+        "All Significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson"
     },
-    "past day": {
-        "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
-        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojson",
-        "all 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
-        "all 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
-        "all significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson"
+    "Past Day": {
+        "All Earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+        "All 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojson",
+        "All 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
+        "All 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+        "All Significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.geojson"
     },
-    "past week": {
-        "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
-        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson",
-        "all 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson",
-        "all 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
-        "all significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson"
+    "Past Week": {
+        "All Earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+        "All 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson",
+        "All 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson",
+        "All 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+        "All Significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson"
     },
-    "past month": {
-        "all earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
-        "all 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojso n",
-        "all 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson",
-        "all 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "all significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
+    "Past Month": {
+        "All Earthquakes": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
+        "All 1.0+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojso n",
+        "All 2.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson",
+        "All 4.5+": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
+        "All Significant": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
 
     }
 }
 
+var temp = 0;
 function makeChildProps(obj, currentProp) {
     var childProps = '';
 
     for (var prop in obj[currentProp]) {
-        var el = "<div class='child-prop'><button class='feed-name' data-feedurl='" + obj[currentProp][prop] + "'>" + prop + "</button></div>";
+        var temp1 = "";
+        switch(temp){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                temp1 = "Past Hour";
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                temp1 = "Past Day";
+                break;
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+                temp1 = "Past Week";
+                break;
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+                temp1 = "Past Month";
+        }
+        var el = "<button class='feed_name' data-feedurl='" + obj[currentProp][prop] + "' id='feed" + temp + "' data-value1='" + temp1 + "' data-value2='" + prop + "'>" + prop + "</button>";
         childProps += el;
+        temp++;
     }
 
     return childProps;
 }
 
-$(document).ready(function () {
+function populate() {
+    map = new google.maps.Map(document.getElementById("map2"), {
+        zoom: 2,
+        center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
+        mapTypeId: 'terrain' // can be any valid type
+    });   
 
     for (var prop in quakeFeeds) {
-
         if (!quakeFeeds.hasOwnProperty(prop)) {
             continue;
         }
-
-        $('#feedSelector').append("<div class='feed-date'>" + prop + "</div>" + makeChildProps(quakeFeeds, prop));
-        console.log(makeChildProps(quakeFeeds, prop));
+        $('#feedSelector').append("<div class=\"col-5\"><div class=\"btn-group\"><h6>" + prop + "</h6>" + makeChildProps(quakeFeeds, prop)+"</div>");
     }
 
-    $('.feed-name').click(function (e) {
-
-        map = new google.maps.Map(document.getElementById('map'), {
+    $('.feed_name').click(function (e) {
+        goToAnchor("map_anchor");
+        var element = document.getElementById("feedIdentifier");
+        element.innerHTML = "Now Showing: " + $(e.target).data('value2') + " In The " + $(e.target).data('value1');
+        map = new google.maps.Map(document.getElementById("map2"), {
         zoom: 2,
         center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
         mapTypeId: 'terrain' // can be any valid type
@@ -101,10 +130,21 @@ $(document).ready(function () {
                         infowindow.open(map, marker); // Open the Google maps marker infoWindow
                     });
                 });
-                var markerCluster = new MarkerClusterer(map, markers,
-                    { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+                var markerCluster = new MarkerClusterer(map, markers, {
+                    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' 
+                });
             }
 
         });
     });
-});
+}
+
+window.onload = function(){
+    document.getElementById('feed15').click();
+}
+
+function goToAnchor(anchor) {
+  var loc = document.location.toString().split('#')[0];
+  document.location = loc + '#' + anchor;
+  return false;
+}

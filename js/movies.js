@@ -2,7 +2,6 @@
 $(document).ready(function (){
 	document.getElementById("data").innerHTML = "test";
 	load();
-
 });
 
 
@@ -64,7 +63,7 @@ function load() {
 							break;
 					}
 				}
-			}
+			});
 			//document.getElementById("data").innerHTML = JSON.stringify(genres);
 
         },

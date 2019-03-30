@@ -14,6 +14,7 @@ include('inc/header.php');
 <div id="info"></div>
 <div class="row">
 	<div class="col-10" id="hearthstone_text">
+		**********Update tutorial at bottom, trim the data down, show options on slider or do something similar because it's not good enough right now. - Possibly draw an option list with col-2 on left, chart with col-8 on right***********
 		<p>
 			Hearthstone is a card game that was created by Blizzard, It features many of the creatures and characters within Blizzards Warcraft series.
 		</p>

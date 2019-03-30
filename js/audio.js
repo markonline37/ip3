@@ -54,7 +54,7 @@ function play(input) {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    var audioFile = "audio/" + input + ".mp3";
+    var audioFile = "media/" + input + ".mp3";
     var myAudio = document.getElementById("myAudio");
 
     myAudio.src = audioFile;
