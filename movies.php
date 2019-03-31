@@ -12,7 +12,7 @@ include('inc/header.php');
 
 <h1>Movies</h1>
 
-<canvas id="chart"></canvas>
+<canvas id="chart" ></canvas>
 
 <div id="info"></div>
 

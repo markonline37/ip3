@@ -82,8 +82,17 @@ function load() {
 			    options: {
 			      	title: {
 				        display: true,
-				        text: 'Genres of 20 top grossing movies'
+				        text: 'Genres of 20 top grossing movies',
+				        fontSize: 40
+			    	},
+			    	legend: {
+			    		display: false
+			    	},
+			    	tooltips: {
+			    		titleFontSize: 20,
+			    		bodyFontSize: 20
 			    	}
+			    	
 			    }
     
 			});
