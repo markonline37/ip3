@@ -55,7 +55,7 @@ function load() {
             //parse data returned from php
             var data = $.parseJSON(json_data);
 
-            //convert the returned json array to internal json array
+            //convert the returned json array to object array
             populateArray(data);
             //load the first chart
             loadDefault();

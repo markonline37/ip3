@@ -5,9 +5,9 @@ include('inc/header.php');
 ?>
 <script type="text/javascript">var ip = <?php echo "\"".$_SERVER['REMOTE_ADDR']."\"";?></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVhtMJumz-cmads_MZCOr-cGt9_UZynZM&callback=initMap"></script>
 <link href="css/weather.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/weather.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVhtMJumz-cmads_MZCOr-cGt9_UZynZM&callback=initMap"></script>
 
 <h1>Weather</h1>
 
@@ -39,14 +39,21 @@ include('inc/header.php');
 	<div class="col-10">
 		<div class="error" id="info"></div>
 	</div>
-	<div class="center">
-		<div class="col-10" id="weather-container">
+	<div class="col-5" id="weather-container">
+
+	</div>
+	<div class="col-5">
+		<div id="map">
 
 		</div>
+		<p>
+			You can find information about weather and the programming techniques used to build this page page by reading the weather tutorial page here:
+		</p>
+		<a href="weathertutorial.php">Weather Tutorial</a>
 	</div>
 </div>
 </div>
-<div id="map"></div>
+
 <div id="content">
 
 <?php

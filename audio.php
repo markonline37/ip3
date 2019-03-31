@@ -11,7 +11,7 @@ include('inc/header.php');
 
 <div class="rows" id="content">
 	<div class="col-10">
-
+		********Add intro/better selection of songs?, improve visualisation, add tutorial link at bottom of page********
 		<form>
 			<input type="radio" name="song" value="actionable">Actionable<br>
 			<input type="radio" name="song" value="anewbeginning">A New Beginning<br>
