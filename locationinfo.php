@@ -17,8 +17,7 @@ include('inc/header.php');
 
 <div id="resultJson"></div>
 
-
-</div>
+<div id="info"></div>
 
 <?php
 include('inc/footer.php'); 

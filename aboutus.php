@@ -12,7 +12,8 @@ include('inc/header.php');
 		<h5>Merin Haslacher</h5>
 		<p>
 			<img class="profile-image" id="author1" src="images/merin.png" alt="Merin Haslacher Profile Picture">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac blandit dolor, imperdiet aliquet urna. In lorem turpis, viverra id maximus eget, molestie et sapien. Praesent vel quam imperdiet, consectetur nunc sed, ullamcorper quam. Nam sagittis tortor non quam venenatis, ac vehicula velit tristique. Vestibulum eu imperdiet mauris. Donec est nisl, eleifend id metus nec, accumsan malesuada tortor. Integer eget felis est. Aliquam sed tincidunt lacus.
+			The roles I played in this project are that of a developer and report writer. My previous programming experiences have mostly been with java, but I have done web development before. Javascript is not new to me, but my experiences with ajax were limited before I started working on this project. The JSON file format was also relatively new to me, but my work on this project has also helped build my experience in this area. Most of my work was done on the earthquake and movie visualizations. This mainly includes selection of the APIs and writing of the 
+			javascript and php files.
 		</p>
 	</div>
 	
