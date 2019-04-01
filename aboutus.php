@@ -11,7 +11,7 @@ include('inc/header.php');
 	<div class="col-5">
 		<h5>Merin Haslacher</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/merin2.png" alt="Merin Haslacher Profile Picture">
+			<img class="profile-image" id="author1" src="images/merin.png" alt="Merin Haslacher Profile Picture">
 			The roles I played in this project are that of a developer and report writer. My previous programming experiences have mostly been with java, but I have done web development before. Javascript is not new to me, but my experiences with ajax were limited before I started working on this project. The JSON file format was also relatively new to me, but my work on this project has also helped build my experience in this area. 
 		</p>
 		<p>
@@ -23,15 +23,13 @@ include('inc/header.php');
 		<h5>Martin Abadzhiev</h5>
 		<p>
 			<img class="profile-image" id="author1" src="images/martin.png" alt="Martin Abadzhiev Profile Picture">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac blandit dolor, imperdiet aliquet urna. In lorem turpis, viverra id maximus eget, molestie et sapien. Praesent vel quam imperdiet, consectetur nunc sed, ullamcorper quam. 
+			I am Martin Abadzhiev a 23-year-old 3rd year computing student at Caledonian university. I come from Bulgaria where I was studying computer science at “High school for Natural science and Mathematics Nikola Obreshkov”. During my years at the university I worked on different group and individual projects. 
 		</p>
 		<p>
-			Nam sagittis tortor non quam venenatis, ac vehicula velit tristique. Vestibulum eu imperdiet mauris. Donec est nisl, eleifend id metus nec, accumsan malesuada tortor. Integer eget felis est. Aliquam sed tincidunt lacus.
-		</p>
-		<p>
-			Nam sagittis tortor non quam venenatis, ac vehicula velit tristique. Vestibulum eu imperdiet mauris. Donec est nisl, eleifend id metus nec, accumsan malesuada tortor. Integer eget felis est. Aliquam sed tincidunt lacus.
+			Together with my team members from group 25 we worked on the creation of a visualiser website. My main role was creating its content and by working on the tutorial pages. I also worked on the documentation of the project and the group report.  
 		</p>
 	</div>
+	<div class="col-10"></div>
 
 	<div class="col-5">
 		<h5>Zarko Ivanov</h5>
@@ -60,6 +58,7 @@ include('inc/header.php');
 			Mark is group leader for the project and in addition to managing the group members and designating tasks is responsible for editing the group report.
 		</p>
 	</div>
+	<div class="col-10"></div>
 
 	<div class="col-5">
 		<h5>Basharat Afzal</h5>
