@@ -18,6 +18,7 @@ function loadChart(){
 	        datasets: [{
 		        label: "Movies with Genre",
 		        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#223344", "#ffa500", "#bebebe" , "#f1c2c2", "#fa7268", "#85a8c2", "#91a490", "#77c8c0", "#cdb0b0", "#7b9e83"],
+	        	data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 	        }]	
 	    },
 	    options: {
@@ -47,8 +48,6 @@ function generateLinks(){
 
 }
 
-var amount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
 function load() {
 
 	loadChart();
@@ -64,55 +63,54 @@ function load() {
 					for (j in genre_ids){
 						switch(genre_ids[j]){
 							case 28://Action
-								amount[0] += 1;
+								myPieChart.data.datasets[0].data[0] += 1;
 								break;
 							case 12://Adventure
-								amount[1] += 1;
+								myPieChart.data.datasets[0].data[1] += 1;
 								break;
 							case 16://Animation
-								amount[2] += 1;
+								myPieChart.data.datasets[0].data[2] += 1;
 								break;
 							case 35://Comedy
-								amount[3] += 1;
+								myPieChart.data.datasets[0].data[3] += 1;
 								break;
 							case 80://Crime
-								amount[4] += 1;
+								myPieChart.data.datasets[0].data[4] += 1;
 								break;
 							case 99://Documentary
-								amount[5] += 1;
+								myPieChart.data.datasets[0].data[5] += 1;
 								break;
 							case 18://Drama
-								amount[6] += 1;
+								myPieChart.data.datasets[0].data[6] += 1;
 								break;
 							case 14://Fantasy
-								amount[7] += 1;
+								myPieChart.data.datasets[0].data[7] += 1;
 								break;
 							case 36://History
-								amount[8] += 1;
+								myPieChart.data.datasets[0].data[8] += 1;
 								break;
 							case 27://Horror
-								amount[9] += 1;
+								myPieChart.data.datasets[0].data[9] += 1;
 								break;
 							case 9648://Mystery
-								amount[10] += 1;
+								myPieChart.data.datasets[0].data[10] += 1;
 								break;
 							case 10749://Romance
-								amount[11] += 1;
+								myPieChart.data.datasets[0].data[11] += 1;
 								break;
 							case 878://Science Fiction
-								amount[12] += 1;
+								myPieChart.data.datasets[0].data[12] += 1;
 								break;
 							case 53://Thriller
-								amount[13] += 1;
+								myPieChart.data.datasets[0].data[13] += 1;
 								break;
 							case 37://Western
-								amount[14] += 1;
+								myPieChart.data.datasets[0].data[14] += 1;
 								break;
 						}
 					}
 					
 				});
-	        	myPieChart.data.datasets[0].data = amount;
     			myPieChart.update();
 	    	},
 	    	error: function() {
