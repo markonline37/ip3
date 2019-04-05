@@ -34,16 +34,38 @@ function sort(){
     } else if(selected === "sweet"){
         displayTitle("Sweet");
         play("sweet");
+    } else if(selected === "cute"){
+        displayTitle("Cute");
+        play("cute");
+    } else if(selected === "happyrock"){
+        displayTitle("Happy Rock");
+        play("happyrock");
+    } else if(selected === "hey"){
+        displayTitle("Hey");
+        play("hey");
+    } else if(selected === "jazzyfrenchy"){
+        displayTitle("Jazzy Frenchy");
+        play("jazzyfrenchy");
+    } else if(selected === "littleidea"){
+        displayTitle("Little Idea");
+        play("littleidea");
     }
 }
 
+var songTitle = "";
 function displayTitle(title){
-    //display now playing when playing, remove it when over
-    var temp = document.getElementById("now_playing");    
-    temp.innerHTML = "Now Playing: " + title;
+    songTitle = title;
+    var temp = document.getElementById("header_holder");    
     var myAudio = document.getElementById("myAudio");
+    //when song has started/finished edit the title.
     myAudio.onended = function() {
-        temp.innerHTML = "<br>";
+        temp.innerHTML = "<h5>Now Playing: </h5>";
+    }
+    myAudio.onplay = function() {
+        temp.innerHTML = "<h5>Now Playing: " + songTitle+"</h5>";
+    }
+    myAudio.onpause = function() {
+        temp.innerHTML = "<h5>Now Playing: " + songTitle+" (Paused)</h5>";
     }
 }
 

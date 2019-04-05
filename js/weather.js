@@ -1,4 +1,4 @@
-//delete ip on live version - for offline development
+//delete ip on live version - for offline development (with this line deleted ip should be loaded via a php variable already set);
 ip = "31.205.14.217";
 
 var map;
@@ -6,6 +6,7 @@ var map;
 var changed = false;
 var error = false;
 var errorText = "";
+var storedData;
 
 //required function with google maps - by default on page load center map based on user's IP address
 function initMap() {
@@ -44,51 +45,43 @@ function drawMap(input) {
             } else {
                 //parse data returned from php
                 var data = $.parseJSON(json_data);
+                storedData = data;
+                //get the forecast container
+                var forecastContainer = document.getElementById("forecast1");
+                forecastContainer.innerHTML = "<h5>" +data.location.name +" Forecast</h5>";
+                
                 //create and populate the forecast container
-                document.getElementById("weather-container").innerHTML = "<h2>Location: "+data.location.name+"</h2>\n";
                 var i;
                 for (i = 0; i < data.forecast.forecastday.length; i++) {
-                    
-                    var sb = "<button class=\"accordion\">";
+
+                    //forecast -----------------------------------------------------------------
+                    var stringBuilder = "";
+                    stringBuilder+="<div class=\"col-sixth\"><div class=\"container\" data-identifier=\"" + i + "\" >\n";
                     if(i===0){
-                        sb+="Now";
+                        stringBuilder+="Now";
                     } else if(i===1){
-                        sb+="Tomorrow";
+                        stringBuilder+="Tomorrow";
                     } else {
                         var date = data.forecast.forecastday[i].date;
                         var year = date.substring(4, 0);
                         var month = date.substring(5, 7);
                         var day = date.substring(8, 10);
-                        sb+=day+"/"+month+"/"+year;
+                        stringBuilder+=day+"/"+month+"/"+year;
                     }
-                    sb+="</button>\n<div class=\"panel\">\n";
-                    sb+="<table class=\"weather-table\">\n";
-                    sb+="<tr>\n<td rowspan=\"7\">\n<img id=\"weather-image\" src=\"http:";
-                    sb+=data.forecast.forecastday[i].day.condition.icon;
-                    sb+="\" alt=\""+data.forecast.forecastday[i].day.condition.text+"\">\n</td>\n";
-                    
+                    stringBuilder+="\n<br>\n<img id=\"weather-image\" src=\"http:";
+                    stringBuilder+=data.forecast.forecastday[i].day.condition.icon;
+                    stringBuilder+="\" alt=\""+data.forecast.forecastday[i].day.condition.text+"\">\n<br>\n";
                     if(i===0){
-                        sb+="<td>\nCondition Now:\n</th>\n<th>\n"+data.current.condition.text+"\n</td>\n</tr>\n";
-                        sb+="<tr>\n<td>\nTemperature Now:\n</th>\n<th>\n"+data.current.temp_c+"°C\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nWind Speed Now:\n</th>\n<th>\n"+data.current.gust_mph+" MPH\n</th>\n</td>\n";
-                        if(data.current.is_day){
-                            sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunset+"\n</th>\n</td>\n";
-                        }
+                        stringBuilder+=data.current.temp_c+"°C\n";
                     } else {
-                        sb+="<td>\nCondition:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.condition.text+"\n</td>\n</tr>\n";
-                        sb+="<tr>\n<td>\nMinimum Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.mintemp_c+"°C\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nAverage Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.avgtemp_c+"°C\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nMaximum Temperature:\n</th>\n<th>\n"+data.forecast.forecastday[i].day.maxtemp_c+"°C\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nWind Speed (Max):\n</th>\n<th>\n"+data.forecast.forecastday[i].day.maxwind_mph+" MPH\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nSunrise:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunrise+"\n</th>\n</td>\n";
-                        sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+data.forecast.forecastday[i].astro.sunset+"\n</th>\n</td>\n";
+                        stringBuilder+=data.forecast.forecastday[i].day.maxtemp_c+"°C\n";
                     }
-
+                    stringBuilder+="</div>\n</div>\n";
+                    forecastContainer.innerHTML += stringBuilder;
                     
-                    sb+="</table>\n";
-                    sb+="</div>\n";
-                    document.getElementById("weather-container").innerHTML += sb;
                 }
+                //add the slider
+                forecastContainer.innerHTML += "<div class=\"slidecontainer2\"><input type=\"range\" min=\"1\" max=\"6\" value=\"1\" class=\"slider2\" id=\"myRange\"></div><br>";
 
                 //centre the map on the location derived by input
                 var lat = data.location.lat;
@@ -113,42 +106,93 @@ function drawMap(input) {
                     content: "Location: "+dataName+"<br>Temperature: "+temperature+"°C<br>Condition: "+condition+"<br>Local Time: "+localtime
                 });
                 infowindow.open(map, marker);
+                drawDetailed(0);
             }
         },
-        complete: function(data) {
-            //only place listener after loading is finished or else the heights of accordion aren't accurate
-            accordionListener();
+        complete: function() {
+            //add a listener to slider
+            document.getElementById("myRange").addEventListener("click", function(){
+                drawDetailed(document.getElementById("myRange").value-1);
+            });
+            //add a listener to container div
+            $('.container').on('click', function (e) {
+                drawDetailed($(e.currentTarget).data('identifier'));
+            });
+
+            resizer();
         }
     });
 }
 
-//accordion listener to be called after ajax request is complete
-function accordionListener() {
-    var acc = document.getElementsByClassName("accordion");
-    var panel2 = acc[0].nextElementSibling;
-    //automatically sets the first panel "active" (not hidden)
-    acc[0].classList.add("active");
-    panel2.style.maxHeight = (panel2.scrollHeight*4) + "px";
-
-    for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight){
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            } 
-        });
+//draws the detailed information based on value
+function drawDetailed(value){
+    //because slider starts at 1, but array starts at 0
+    document.getElementById("myRange").value = value+1;
+    var container = document.getElementById("forecast2");
+    //title stuff
+    var sb = "<h5>";
+    switch(value){
+        case 0:
+            sb+="Now";
+            break;
+        case 1:
+            sb+="Tomorrow";
+            break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            var date = storedData.forecast.forecastday[value].date;
+            var year = date.substring(4, 0);
+            var month = date.substring(5, 7);
+            var day = date.substring(8, 10);
+            sb+=day+"/"+month+"/"+year;
+            break;
     }
+    sb+="</h5>\n";
+
+    sb+="<table class=\"weather-table\">\n";
+    sb+="<tr>\n<td rowspan=\"7\">\n<img id=\"weather-image\" src=\"http:";
+    sb+=storedData.forecast.forecastday[value].day.condition.icon;
+    sb+="\" alt=\""+storedData.forecast.forecastday[value].day.condition.text+"\">\n</td>\n";
+    
+    //if it's now - has different information than forecast
+    if(value===0){
+        sb+="<td>\nCondition Now:\n</th>\n<th>\n"+storedData.current.condition.text+"\n</td>\n</tr>\n";
+        sb+="<tr>\n<td>\nTemperature Now:\n</th>\n<th>\n"+storedData.current.temp_c+"°C\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nWind Speed Now:\n</th>\n<th>\n"+storedData.current.gust_mph+" MPH\n</th>\n</td>\n";
+        if(storedData.current.is_day){
+            sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].astro.sunset+"\n</th>\n</td>\n";
+        }
+    } else {
+        sb+="<td>\nCondition:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].day.condition.text+"\n</td>\n</tr>\n";
+        sb+="<tr>\n<td>\nMinimum Temperature:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].day.mintemp_c+"°C\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nAverage Temperature:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].day.avgtemp_c+"°C\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nMaximum Temperature:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].day.maxtemp_c+"°C\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nWind Speed (Max):\n</th>\n<th>\n"+storedData.forecast.forecastday[value].day.maxwind_mph+" MPH\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nSunrise:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].astro.sunrise+"\n</th>\n</td>\n";
+        sb+="<tr>\n<td>\nSunset:\n</th>\n<th>\n"+storedData.forecast.forecastday[value].astro.sunset+"\n</th>\n</td>\n";
+    }
+    sb+="</table>\n";
+
+    container.innerHTML = sb;
 }
 
+//on window resize call resizer to change height of map to avoid scrollbars
+window.addEventListener("resize", resizer);
+function resizer() {
+    var h = window.innerHeight;
+    document.getElementById('map').style.height = (h*0.3)+"px";
+}
+
+//listen for enter
 function submitSearchName(e){
     if (e.keyCode === 13){
         searchByName();
     }
 }
 
+//search by location name, check for errors etc if none do a search
 function searchByName() {
     var error = document.getElementById("name-error");
     error.innerHTML = "<br>";
@@ -162,12 +206,14 @@ function searchByName() {
     }
 }
 
+//listen for enter
 function submitSearchLotLan(e){
     if (e.keyCode === 13){
         searchByLatLon();
     }
 }
 
+//search by lat/lon, check for errors etc and if none do the search
 function searchByLatLon() {
     var error = document.getElementById("latlon-error");
     error.innerHTML = "<br>";
