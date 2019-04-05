@@ -5,13 +5,6 @@ function ready() {
 	load();
 }
 
-//add a listener and redraw function for when page size is changed
-window.addEventListener("resize", resizer);
-function resizer() {
-    var value = document.getElementById("ranger").value-1;
-    drawChart(sets[value]);
-}
-
 var error = false;
 var sets = [
 	"Basic",
@@ -45,6 +38,7 @@ function load() {
 
 	$.ajax({
 		type: "POST",
+        //post the data to a php file to protect the api keys
         url: "script/hearthstone-load.php",
         error: function() {
             //load default view and show error
@@ -57,32 +51,48 @@ function load() {
 
             //convert the returned json array to object array
             populateArray(data);
+            //populate menu
+            drawMenu();
             //load the first chart
             loadDefault();
         },
         complete: function(data) {
             //add listener after everything is loaded
-            sliderListener();
+            menuListener();
         }
 	});
 }
 
-function sliderListener() {
+//draws the set selector options based upon the sets array above
+function drawMenu(){
+    var container = document.getElementById("menu_content");
+    container.innerHTML = "<h5>Set Selector</h5><br>\n";
+    var sb = "<form name=\"menu_form\">";
+    for(var i = 0; i < sets.length; i++){
+        sb+= "<input type=\"radio\" name=\"setselector\" id=\"" + sets[i] + "\" value=\"" + sets[i] + "\">" + sets[i] + "<br>";
+    }
+    sb+="</form><br>";
+    container.innerHTML+=sb;
+}
+
+function menuListener() {
     //show hidden elements after data has loaded
     document.getElementById("hearthstone_text").style.display = "block";
     document.getElementById("hearthstone_links").style.display = "block";
-    document.getElementById("slider_holder").style.display = "block";
-    //add listener
-    document.getElementById("ranger").addEventListener("input", getSlider);
+    document.getElementById("menu_content").style.display = "block";
+    document.getElementById("menu_tag").style.display = "block";
+    document.getElementById("Basic").checked = true;
+    document.getElementById("temp2").style.display = "none";
+
+    //add a listener to every element type radio, call draw chart using the value stored in radio button
+    $(document).ready(function(){
+        $('input[type=radio]').click(function(){
+            drawChart(this.value);
+        });
+    });
 }
 
-//function called when slider is changed by user
-function getSlider() {
-    var slider = document.getElementById("ranger");
-    //value starts at 1, so -1 because arrays.
-    var value = slider.value-1;
-    drawChart(sets[value]);
-}
+
 
 function populateArray(data){
 	var j;
@@ -157,11 +167,22 @@ function populateArray(data){
 	}
 }
 
+//initially draw the basic set
 function loadDefault(){
 	drawChart('Basic');
 }
 
+//boolean to stop anchor jump on initial load of page
+var firstLoad = true;
+
 function drawChart(input) {
+    document.getElementById("menu_tag").innerHTML = "<a id=\"set_anchor\"></a><h5>"+input+" Set</h5>\n<br>";
+    //if the user is browsing with mobile sized devices jump to anchor after pressing a radio button for convience
+    if(firstLoad === false && window.innerWidth < 950){
+        window.location.href = "#set_anchor";
+    } else {
+        firstLoad = false;
+    }
 	var data = google.visualization.arrayToDataTable([
 		['Card Type', 'Total'],
 		['Minion(s) With: 1 Health', jsonarray[input].one],
@@ -190,9 +211,6 @@ function drawChart(input) {
 	var height2 = data.getNumberOfRows() * 30 + 30;
 
 	var options = {
-		chart: {
-			title: input + ' Set',
-		},
 		hAxis: {
 		title: 'Number',
 			minValue: 0,

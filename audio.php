@@ -11,18 +11,40 @@ include('inc/header.php');
 
 <div class="rows" id="content">
 	<div class="col-10">
-		********Add intro/better selection of songs?, improve visualisation, add tutorial link at bottom of page********
+		<p>
+			On this page you can select a song and press the play button which will start a visual representation of the audio frequency ranges for the song in real time.
+		</p>
+		<p>
+			All of the Royalty-free music was legally sourced from Bensound:
+			<a href="https://www.bensound.com/royalty-free-music">Bensound</a>
+		</p>
+		<p>
+			You can find information about the programming techniques used to build this page and how to visualy display the audio data by reading the Audio tutorial page here: <a href="audiotutorial.php">Audio Tutorial</a>
+		</p>
+		<br>
+	</div>
+	<div class="col-3left">
+		<h5>Song Selector</h5>
+		<br>
 		<form>
 			<input type="radio" name="song" value="actionable">Actionable<br>
 			<input type="radio" name="song" value="anewbeginning">A New Beginning<br>
+			<input type="radio" name="song" value="cute">Cute<br>
 			<input type="radio" name="song" value="epic">Epic<br>
+			<input type="radio" name="song" value="happyrock">Happy Rock<br>
+			<input type="radio" name="song" value="hey">Hey<br>
+			<input type="radio" name="song" value="jazzyfrenchy">Jazzy Frenchy<br>
+			<input type="radio" name="song" value="littleidea">Little Idea<br>
 			<input type="radio" name="song" value="summer">Summer<br>
 			<input type="radio" name="song" value="sweet">Sweet<br>
 		</form>
-
+		<br>
 		<button id="play_button">Play</button>
-		<br><br>
-		<div id="now_playing"><br></div>
+	</div>
+	<div class="col-7">
+		<div id="header_holder">
+			<h5>Now Playing: </h5>
+		</div>
 		<br>
 	  	<canvas id="canvas"></canvas>
 	  	<audio id="myAudio" controls>

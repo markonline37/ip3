@@ -8,7 +8,7 @@ include('inc/header.php');
 
 <h1>About Us</h1>
 <div class="row">
-	<div class="col-5">
+	<div class="col-5left">
 		<h5>Merin Haslacher</h5>
 		<p>
 			<img class="profile-image" id="author1" src="images/merin.png" alt="Merin Haslacher Profile Picture">
@@ -31,7 +31,7 @@ include('inc/header.php');
 	</div>
 	<div class="col-10"></div>
 
-	<div class="col-5">
+	<div class="col-5left">
 		<h5>Zarko Ivanov</h5>
 		<p>
 			<img class="profile-image" id="author1" src="images/zarko.png" alt="Zarko Ivanov Profile Picture">
@@ -60,7 +60,7 @@ include('inc/header.php');
 	</div>
 	<div class="col-10"></div>
 
-	<div class="col-5">
+	<div class="col-5left">
 		<h5>Basharat Afzal</h5>
 		<p>
 			<img class="profile-image" id="author1" src="images/bash.png" alt="Basharat Afzal Profile Picture">

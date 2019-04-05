@@ -58,6 +58,6 @@
     cursor: pointer;
 }
 
-#hearthstone_text, #hearthstone_links, #slider_holder {
+#hearthstone_text, #hearthstone_links, #slider_holder, #menu_content, #menu_tag {
     display: none;
 }

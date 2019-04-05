@@ -13,7 +13,7 @@ include('inc/header.php');
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
 		</p>
 	</div>
-	<div class="col-third">
+	<div class="col-thirdleft">
 		<h5>About Us</h5>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
@@ -22,7 +22,7 @@ include('inc/header.php');
 			<button type="button" class="main_button" id="aboutus_button" onclick="window.location='aboutus.php'">About Us Page</button>
 		</div>
 	</div>
-	<div class="col-third">
+	<div class="col-thirdleft">
 		<h5>Data Visualisation</h5>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.

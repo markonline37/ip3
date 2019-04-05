@@ -9,27 +9,25 @@
 #centre_website {
 	margin-right: 2%;
 	margin-left: 2%;
-	height: 100%;
+	min-height: 100%;
+	position: relative;
 	width: auto;
 }
 
 [class*="col-"] {
-  float: left;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 0px;
-  padding-bottom: 15px;
+  	float: left;
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+  	content: "";
+  	clear: both;
+  	display: table;
 }
 
 body, html {
 	background-color: white;
     height: 90%;
+    position: relative;
     width: auto;
 }
 
@@ -48,6 +46,7 @@ h1 {
 	color: #f2f2f2;
 	padding: 14px 16px;
 	margin-top: 10px;
+	margin-left: 0px;
 	margin-bottom: 10px;
 }
 
@@ -79,6 +78,7 @@ h5 {
 	color: #f2f2f2;
 	padding: 14px 16px;
 	margin: 0px;
+	margin-bottom: 3px;
 }
 
 .center {
@@ -118,22 +118,58 @@ h5 {
 
 /* For desktop: */
 @media only screen and (min-width: 950px) {
-	.col-1 {width: 10%;}
+	.col-1 {
+		width: 10%;
+	}
 	.col-2 {width: 20%;}
+	.col-2left {
+		width: 20%;
+		padding-right: 28px;
+	}
 	.col-3 {width: 30%;}
+	.col-3left {
+		width: 30%;
+		padding-right: 28px;
+	}
 	.col-third {width: 33.33%;}
+	.col-thirdleft {
+		width: 33.33%;
+		padding-right: 28px;
+	}
 	.col-4 {width: 40%;}
+	.col-4left {
+		width: 40%;
+		padding-right: 28px;
+	}
+	.col-5left {
+		width: 50%;
+		padding-right: 28px;
+	}
 	.col-5 {width: 50%;}
 	.col-6 {width: 60%;}
+	.col-6left {
+		width: 60%;
+		padding-right: 28px;
+	}
 	.col-7 {width: 70%;}
+	.col-7left {
+		width: 70%;
+		padding-right: 28px;
+	}
 	.col-8 {width: 80%;}
+	.col-8left {
+		width: 80%;
+		padding-right: 28px;
+	}
 	.col-9 {width: 90%;}
 	.col-10 {width: 100%;}
 	.col-seventh {width: 14.28%;}
+	.col-sixth {
+		width: 16.66%;
+		text-align: center;
+	}
 
 	#centre_website {
-		margin-right: 5%;
-		margin-left: 5%;
 		height: 100%;
 		width: auto;
 	}

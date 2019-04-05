@@ -30,7 +30,7 @@
 				<a id="movies" href="movies.php">Movies</a>
 				<a id="hearthstone" href="hearthstone.php">Hearthstone</a>
 				<a id="audio" href="audio.php">Audio</a>
-				<a id="books" href="books.php">Books</a>
+				<a id="shakespeare" href="shakespeare.php">Shakespeare</a>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -43,7 +43,7 @@
 				<a id="moviestutorial" href="moviestutorial.php">Movies Tutorial</a>
 				<a id="hearthstonetutorial" href="hearthstonetutorial.php">Hearthstone Tutorial</a>
 				<a id="audiotutorial" href="audiotutorial.php">Audio Tutorial</a>
-				<a id="bookstutorial" href="bookstutorial.php">Books Tutorial</a>
+				<a id="shakespearetutorial" href="shakespearetutorial.php">Shakespeare Tutorial</a>
 			</div>
 		</div>	
 		<a id="icon" href="javascript:void(0);" class="icon" onclick="displayMenu()"><i class="fa fa-bars"></i></a>
