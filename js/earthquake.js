@@ -133,7 +133,7 @@ function populate() {
                     });
                     markers[i++] = marker;
                     var infowindow = new google.maps.InfoWindow({
-                        content: "<h3>" + val.properties.title + "</h3><p><a href='" + "locationinfo.php" + "?lat=" + coords[1] + "&long=" + coords[0] + "'target='_blank'" + ">Details</a></p>"
+                        content: "<h3>" + val.properties.title + "</h3><a href='" + "locationinfo.php" + "?lat=" + coords[1] + "&long=" + coords[0] + "'target='_blank'" + ">Details</a>"
                     });
                     marker.addListener('click', function (data) {
                         infowindow.open(map, marker);

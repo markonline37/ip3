@@ -10,7 +10,12 @@ include('inc/header.php');
 <div class="row">
 	<div class="col-10">
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
+			This should explain the purpose and content of the IP3 Project. It should include a link to a
+			version of the project specification document in a suitable web-readable format (such as
+			PDF)
+		</p>
+		<p>
+			<a href="pdf/ip3specification.pdf" target="_blank">IP3 Specification</a> (Opens in a new tab)
 		</p>
 	</div>
 	<div class="col-thirdleft">

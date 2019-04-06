@@ -58,14 +58,81 @@ function drawMap(input) {
                     var stringBuilder = "";
                     stringBuilder+="<div class=\"col-sixth\"><div class=\"container\" data-identifier=\"" + i + "\" >\n";
                     if(i===0){
-                        stringBuilder+="Now";
+                        stringBuilder+="<br>Now";
                     } else if(i===1){
-                        stringBuilder+="Tomorrow";
+                        stringBuilder+="<br>Tomorrow";
                     } else {
                         var date = data.forecast.forecastday[i].date;
                         var year = date.substring(4, 0);
                         var month = date.substring(5, 7);
                         var day = date.substring(8, 10);
+                        //create a date object to evaluate what day it is for the forecast - because date isn't built into the API
+                        var monthString = "";
+                        switch(parseInt(month, 10)){
+                            case 1:
+                                monthString = "January";
+                                break;
+                            case 2:
+                                monthString = "February";
+                                break;
+                            case 3:
+                                monthString = "March";
+                                break;
+                            case 4:
+                                monthString = "April";
+                                break;
+                            case 5:
+                                monthString = "May";
+                                break;
+                            case 6:
+                                monthString = "June";
+                                break;
+                            case 7:
+                                monthString = "July";
+                                break;
+                            case 8:
+                                monthString = "August";
+                                break;
+                            case 9:
+                                monthString = "September";
+                                break;
+                            case 10:
+                                monthString = "October";
+                                break;
+                            case 11:
+                                monthString = "November";
+                                break;
+                            case 12:
+                                monthString = "December";
+                                break;
+                        }
+                        var dateString = monthString + " " + day + ", " + year + " 05:00:00";
+                        var d = new Date(dateString);
+                        var temp = "";
+                        switch(d.getDay()){
+                            case 0: 
+                                temp = "Sunday";
+                                break;
+                            case 1: 
+                                temp = "Monday";
+                                break;
+                            case 2: 
+                                temp = "Tuesday";
+                                break;
+                            case 3: 
+                                temp = "Wednesday";
+                                break;
+                            case 4: 
+                                temp = "Thursday";
+                                break;
+                            case 5: 
+                                temp = "Friday";
+                                break;
+                            case 6: 
+                                temp = "Saturday";
+                                break;
+                        }
+                        stringBuilder+=temp+"<br>\n";
                         stringBuilder+=day+"/"+month+"/"+year;
                     }
                     stringBuilder+="\n<br>\n<img id=\"weather-image\" src=\"http:";
