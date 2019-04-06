@@ -69,7 +69,7 @@ function loadChart(){
 	    options: {
 	      	title: {
 		        display: true,
-		        text: 'Genres of top 20 grossing movies over time',
+		        text: 'Genres of top 40 grossing movies over time',
 		        fontSize: 40
 	    	},
 	    	tooltips: {
@@ -91,13 +91,10 @@ function generateLinks(pages){
 
 }
 
-var testCounter = 0;
-var testCounter2 = 0;
-
 function load() {
 
 	var currentYear = new Date().getFullYear();
-	generateLinks(3);
+	generateLinks(2);
 
 	for(i = 1950; i <= currentYear; i+=5){	
 		years.push(i);
