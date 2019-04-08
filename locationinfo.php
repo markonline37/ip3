@@ -16,7 +16,6 @@ include('inc/header.php');
 <h1>Geolocational Information</h1>
 
 <div id="resultJson"></div>
-
 <div id="info"></div>
 
 <?php
