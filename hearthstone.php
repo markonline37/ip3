@@ -40,7 +40,7 @@ include('inc/header.php');
 	<div class="col-10" id="hearthstone_links">
 		<br>
 		<p>
-			You can find information about Hearthstone and the programming techniques used to build this page by reading the Hearthstone tutorial page here:<br>
+			You can find information about the programming techniques used to build this page by reading the Hearthstone tutorial page here:<br>
 		</p>
 		<a href="hearthstonetutorial.php">Hearthstone Tutorial</a>
 	</div>

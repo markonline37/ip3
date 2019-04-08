@@ -24,7 +24,8 @@ function geocode(input1, input2){
 			else{
 				$('#resultJson').append("Region is not in a country. " + "<br>");
 			}
-
+			var string = "<img src=\"https://www.countryflags.io/" + data.results[0].components.country_code + "/flat/64.png\">";
+			$('#resultJson').append(string);
 
 		},
 		error: function(){

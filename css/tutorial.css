@@ -1,0 +1,15 @@
+pre {
+    counter-reset: line;
+}
+
+code {
+    counter-increment: line;
+}
+
+code:before {
+    content: counter(line);
+    margin-right: .5em;
+    -webkit-user-select: none;
+    padding: 0 .5em;
+    border-right: 1px solid black;
+}

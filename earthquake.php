@@ -18,9 +18,11 @@ include('inc/header.php');
 		<div id="feedSelector"></div>
 	</div>
 	<div class="col-8">
+		
+		<div id="feedIdentifier"></div>
 		<a id="map_anchor"></a>
-		<div id="feedIdentifier"><br></div>
 		<div id="map2"></div>
+
 		<p>
 			You can find information about earthquakes and the programming techniques used to build this page page by reading the earthquake tutorial page here:
 		</p>
