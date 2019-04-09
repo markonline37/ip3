@@ -6,7 +6,6 @@ $(document).ready(function (){
 				dataType : 'json',    
 		        success: function(data){
 		      		url = data.url;
-		      		console.log(url);
 		      		load();
 		    	},
 		    	error: function() {
