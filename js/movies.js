@@ -1,24 +1,9 @@
-var url;
 
 $(document).ready(function (){
-			$.ajax({
-				url: "script/movies-load.php",
-				dataType : 'json',    
-		        success: function(data){
-		      		url = data.url;
-		      		load();
-		    	},
-		    	error: function() {
-		            var errorText = "Error occured, please reload page or contact systems administrator";
-			        document.getElementById("info").innerHTML = errorText;
-	        	}
-	        });
-
-	
-
+	load();
 });
 
-var movieLinks = [];
+var pages = [];
 var years = [];
 var myChart;
 
@@ -92,30 +77,31 @@ function loadChart(){
 	});
 }
 
-function generateLinks(pages){
-
-	for(i = 1; i <= pages; i++){
-		movieLinks.push(url+i);
-	}
-
-}
-
 function load() {
 
 	var currentYear = new Date().getFullYear();
-	generateLinks(2);
 
 	for(i = 1950; i <= currentYear; i+=5){	
 		years.push(i);
 	}
 
+	for(i = 1; i <= 2; i++){
+		pages.push(i);
+	}
+
 	loadChart();
+
 	$.each(years, function(y,year){
-		$.each(movieLinks, function(i,item){
+		$.each(pages, function(p,page){
 		    $.ajax({
-		    	url: item+"&primary_release_year="+year,
-				dataType: 'json',    
-		        success: function(data){
+		    	type: "POST",
+				url: "script/movies-load.php",
+				data: {
+					phppage: page,
+					phpyear: year
+				},
+		        success: function(response){
+		        	var data = $.parseJSON(response);
 		        	$.each(data.results, function(i){
 						var genre_ids = data.results[i].genre_ids;
 						for (j in genre_ids){
