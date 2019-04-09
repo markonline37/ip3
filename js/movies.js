@@ -1,7 +1,22 @@
+var url;
 
 $(document).ready(function (){
+			$.ajax({
+				url: "script/movies-load.php",
+				dataType : 'json',    
+		        success: function(data){
+		      		url = data.url;
+		      		console.log(url);
+		      		load();
+		    	},
+		    	error: function() {
+		            var errorText = "Error occured, please reload page or contact systems administrator";
+			        document.getElementById("info").innerHTML = errorText;
+	        	}
+	        });
 
-	load();
+	
+
 });
 
 var movieLinks = [];
@@ -17,11 +32,6 @@ window.chartColors = {
   purple: 'rgb(153, 102, 255)',
   grey: 'rgb(201, 203, 207)'
 };
-
- $(document).ajaxStop(function () {
-      console.log(myChart.data.datasets[0].data);
-      console.log(myChart.data.datasets[5].data);
- });
 
 function loadChart(){
 	var ctx = document.getElementById('chart');
@@ -86,7 +96,7 @@ function loadChart(){
 function generateLinks(pages){
 
 	for(i = 1; i <= pages; i++){
-		movieLinks.push("https://api.themoviedb.org/3/discover/movie?api_key=fd710eb4aa46d9d9a6a5c6d5192149c4&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page="+i);
+		movieLinks.push(url+i);
 	}
 
 }
