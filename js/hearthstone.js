@@ -48,7 +48,7 @@ function load() {
         success: function(json_data){
             //parse data returned from php
             var data = $.parseJSON(json_data);
-
+        
             //convert the returned json array to object array
             populateArray(data);
             //populate menu
@@ -212,7 +212,7 @@ function drawChart(input) {
 
 	var options = {
 		hAxis: {
-		title: 'Number',
+            title: 'Number',
 			minValue: 0,
 		},
 		vAxis: {

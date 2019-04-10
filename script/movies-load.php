@@ -1,8 +1,14 @@
 <?php
 
-$input = $_POST['phpinput'];
+$page = $_POST['phppage'];
+$year = $_POST['phpyear'];
 
-$url = "https://api.themoviedb.org/3/discover/movie?api_key=fd710eb4aa46d9d9a6a5c6d5192149c4&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1"
+$url = "https://api.themoviedb.org/3/discover/movie?api_key=fd710eb4aa46d9d9a6a5c6d5192149c4&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=".$page."&primary_release_year=".$year;
+
+<<<<<<< HEAD
+$url = "https://api.themoviedb.org/3/discover/movie?api_key=fd710eb4aa46d9d9a6a5c6d5192149c4&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page=1";
+=======
+>>>>>>> a6486e77a37821e45e5beea37f486bd3c2781514
 
 $json = file_get_contents($url);
 

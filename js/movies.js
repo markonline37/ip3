@@ -1,10 +1,9 @@
 
 $(document).ready(function (){
-
 	load();
 });
 
-var movieLinks = [];
+var pages = [];
 var years = [];
 var myChart;
 
@@ -17,11 +16,6 @@ window.chartColors = {
   purple: 'rgb(153, 102, 255)',
   grey: 'rgb(201, 203, 207)'
 };
-
- $(document).ajaxStop(function () {
-      console.log(myChart.data.datasets[0].data);
-      console.log(myChart.data.datasets[5].data);
- });
 
 function loadChart(){
 	var ctx = document.getElementById('chart');
@@ -83,30 +77,31 @@ function loadChart(){
 	});
 }
 
-function generateLinks(pages){
-
-	for(i = 1; i <= pages; i++){
-		movieLinks.push("https://api.themoviedb.org/3/discover/movie?api_key=fd710eb4aa46d9d9a6a5c6d5192149c4&language=en-US&sort_by=revenue.desc&include_adult=false&include_video=false&page="+i);
-	}
-
-}
-
 function load() {
 
 	var currentYear = new Date().getFullYear();
-	generateLinks(2);
 
 	for(i = 1950; i <= currentYear; i+=5){	
 		years.push(i);
 	}
 
+	for(i = 1; i <= 2; i++){
+		pages.push(i);
+	}
+
 	loadChart();
+
 	$.each(years, function(y,year){
-		$.each(movieLinks, function(i,item){
+		$.each(pages, function(p,page){
 		    $.ajax({
-		    	url: item+"&primary_release_year="+year,
-				dataType: 'json',    
-		        success: function(data){
+		    	type: "POST",
+				url: "script/movies-load.php",
+				data: {
+					phppage: page,
+					phpyear: year
+				},
+		        success: function(response){
+		        	var data = $.parseJSON(response);
 		        	$.each(data.results, function(i){
 						var genre_ids = data.results[i].genre_ids;
 						for (j in genre_ids){
