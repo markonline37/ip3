@@ -63,6 +63,7 @@ function initialChart(){
 	    },
 	    options: {
 	    	responsive: true,
+	    	maintainAspectRatio: false,
 	      	title: {
 		        display: true,
 		        text: 'Genre distribution of 20 highest earning movies',
@@ -76,23 +77,33 @@ function initialChart(){
 	    		yAxes: [{
 	    			scaleLabel: {
 	    				display: true,
+	    				fontSize: 30,
 	    				labelString: "Number of movies"
-	    			}
+	    			},
+	    			ticks: {
+                		fontSize: 20
+            		}
 
 	    		}],
 	    		xAxes: [{
 	    			scaleLabel: {
 	    				display: true,
+	    				fontSize: 30,
 	    				labelString: "Year"
-	    			}
+	    			},
+	    			ticks: {
+                		fontSize: 20
+            		}
 
 	    		}]
 
-	    	}
-
-	    	
+	    	},
+	    	legend: {
+	            labels: {
+	                fontSize: 20
+	            }
+        	}
 	    }
- 
 	});
 }
 
@@ -159,11 +170,7 @@ function load() {
 	}
 
 	initialChart();
-
 	updateChart();
-
-
-
 }
 
 var err = false;
@@ -273,5 +280,3 @@ function updateChart(){
 	    });		
 	});
 }
-
-
