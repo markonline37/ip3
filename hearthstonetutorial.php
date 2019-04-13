@@ -61,7 +61,7 @@ include('inc/header.php');
 	</ol>
 </p>
 <p>
-	Requests to the hearthstone API are information written in a URL format.<br>
+	Requests to the hearthstone API are written in a URL format.<br>
 	The URL to access information for all of the cards, as seen in #3 in the above picture, is:<br>
 	<pre>
 		<code>https://omgvamp-hearthstone-v1.p.rapidapi.com/cards</code>
@@ -71,7 +71,7 @@ include('inc/header.php');
 	When a user accesses the hearthstone visualisation page, the visualiser server sends the URL to the hearthstone API using an AJAX request using the API key as a custom header.
 </p>
 <p>
-	If you want to duplicate the following code remember to include jQuery and your JavaScript file on the HTML page, and remember to order jQuery before JavaScript to avoid any issues eg:<br><br>
+	If you want to duplicate the following code remember to include jQuery and your JavaScript file on the HTML page, and remember to order jQuery before JavaScript to avoid any issues<br><br>
 
 	HTML page:<br>
 	<pre>
@@ -106,7 +106,7 @@ include('inc/header.php');
 <p>
 	Now that we have the data loaded from the hearthstone API we can display it.<br><br>
 
-	Various technologies exist to display the data but we will be using google charts - bar chart.<br><br>
+	Various technologies exist to display the data but we will be using the google charts - bar chart.<br><br>
 
 	To learn more about google charts please visit the exhaustive <a href="https://developers.google.com/chart/interactive/docs/gallery/barchart">google charts documentation</a><br><br>
 

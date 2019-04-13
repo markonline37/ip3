@@ -60,7 +60,7 @@ include('inc/header.php');
 		<code>}</code>
 	</pre>
 	
-	A feature collection is just an array of Feature objects.  <br><br>
+	A Feature collection is just an array of Feature objects.  <br><br>
 
 	There are very good example for the use of GeoJSON that can help you get a better understanding here: <a href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">Introduction to GEOJson and D3 JS</a><br><br>
 </p>
