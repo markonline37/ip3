@@ -25,7 +25,8 @@ include('inc/header.php');
 <p>
 	<a href="#section1_anchor">Gathering the data</a><br>
 	<a href="#section3_anchor">Displaying the processed data</a><br>
-	<a href="#section4_anchor">Further Reading</a>
+	<a href="#section4_anchor">Further Reading</a><br>
+	<a href="#section5_anchor">References</a>
 </p>
 
 <a id="section1_anchor"></a>
@@ -78,6 +79,7 @@ include('inc/header.php');
 		<code>&lt;script type=&quot;text/javascript&quot; src=&quot;yourJSfile.js&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 	
+	<a id="ajax_anchor"></a>
 	yourJSfile.js:<br>
 	<pre>
 		<code>$.ajax({</code>
@@ -90,7 +92,7 @@ include('inc/header.php');
 		<code>  }</code>
 		<code>});</code>
 	</pre>
-	</p>
+</p>
 <p>
 	You need to update 'YOUR-RAPIDAPI-KEY-HERE' on line 4. Which can be found on RapidAPI, see #4 in the above picture<br><br> 
 
@@ -208,6 +210,14 @@ include('inc/header.php');
 		<li><a href="https://www.javascript.com/learn/strings">JavaScript - Learn</a><br>Learn JavaScript directly from JS itself<br></li>
 		<li><a href="https://developers.google.com/chart/interactive/docs/quick_start">Google Charts Documentation</a><br>Google Charts Documentation is extremeley helpful with tons of examples and easy to follow tutorials<br></li>
 		<li>If you ever get stuck - remember to check the console (F12) and google your problem - guarenteed you're not the first to have the same issue!</li>
+	</ul>
+</p>
+
+<a id="section5_anchor"></a>
+<h2>References</h2>
+<p>
+	<ul>
+		<li></li>
 	</ul>
 </p>
 
