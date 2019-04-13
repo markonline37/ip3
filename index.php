@@ -10,6 +10,7 @@ include('inc/header.php');
 <div class="row">
 	<div class="col-10">
 		<p>
+			IP3 group 25 created the Visualizer website in order to create several different data visualisations including an Earthquake and Weather page and 4 four other data visualisations chosen by the creators of the site. The Visualiser website also feature several tutorials detailing how to re-create each visualisation and providing further reading for anyone interested. <br><br>
 			This should explain the purpose and content of the IP3 Project. It should include a link to a
 			version of the project specification document in a suitable web-readable format (such as
 			PDF)
@@ -21,7 +22,7 @@ include('inc/header.php');
 	<div class="col-thirdleft">
 		<h5>About Us</h5>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
+			The about us page features a short biography about each of the members of group 25 including their names, age and their past places of education.
 		</p>
 		<div class="center">
 			<button type="button" class="main_button" id="aboutus_button" onclick="window.location='aboutus.php'">About Us Page</button>
@@ -30,7 +31,7 @@ include('inc/header.php');
 	<div class="col-thirdleft">
 		<h5>Data Visualisation</h5>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
+			The data visualisations page features all 6 of the data visualisations that group 25 created including the Hearthstone page which features all the hearthstone sets and all of the cards within that set organised by mana cost and card type. 
 		</p>
 		<div class="center">
 			<button type="button" class="main_button" id="earthquake_button" onclick="window.location='visualisation.php'">Data Visualisation Page</button>
@@ -39,7 +40,7 @@ include('inc/header.php');
 	<div class="col-third">
 		<h5>Tutorial Page</h5>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum volutpat hendrerit. Nunc sit amet nisl nec nisl tincidunt tristique a sed nisi. Integer a blandit elit. Pellentesque ac mattis elit. Mauris consequat ipsum vel augue dapibus vestibulum. Curabitur euismod augue eu ultrices malesuada. Vestibulum eu commodo tellus. Aliquam erat risus, consequat vitae venenatis consequat, hendrerit vel nunc. Aenean maximus risus non feugiat suscipit. Curabitur eu odio odio. Aenean quis tincidunt lectus.
+			 The tutorial page features several different tutorials on the different visualisation pages within the Visualiser website as well as a number of links to further reading on how to better use JSON and GEOJSON.
 		</p>
 		<div class="center">
 			<button type="button" class="main_button" id="tutorial_button" onclick="window.location='tutorial.php'">Tutorial Page</button>

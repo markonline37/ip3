@@ -12,15 +12,22 @@ include('inc/header.php');
 <P>
 	This is the tutorial written for the <a href="hearthstone.php">hearthstone visualisation.</a><br>
 	To understand key concepts discussed here such as API's, AJAX requests and JSON arrays please read the <a href="javascripttutorial.php">JavaScript tutorial</a><br>
-	A complete working example is at the bottom of the page - you must still update the API Key in the JavaScript file on line 8.
-</P>
+	A complete working example is at the bottom of the page - you must still update the API Key in the JavaScript file on line 8.<br>
+	Links to further reading on relevant topics are available at the bottom of the page.
+</P>  
 <p>
 	Creating the data visualisation involves 2 steps:
 	<ol>
-		<li><a href="#section1_anchor">Gathering the data</a></li>
-		<li><a href="#section3_anchor">Displaying the processed data</a></li>
+		<li>Gathering the data</li>
+		<li>Displaying the data</li>
 	</ol>
 </P>
+<p>
+	<a href="#section1_anchor">Gathering the data</a><br>
+	<a href="#section3_anchor">Displaying the processed data</a><br>
+	<a href="#section4_anchor">Further Reading</a><br>
+	<a href="#section5_anchor">References</a>
+</p>
 
 <a id="section1_anchor"></a>
 <h2>Gathering the Data</h2>
@@ -54,7 +61,7 @@ include('inc/header.php');
 	</ol>
 </p>
 <p>
-	Requests to the hearthstone API are information written in a URL format.<br>
+	Requests to the hearthstone API are written in a URL format.<br>
 	The URL to access information for all of the cards, as seen in #3 in the above picture, is:<br>
 	<pre>
 		<code>https://omgvamp-hearthstone-v1.p.rapidapi.com/cards</code>
@@ -64,7 +71,7 @@ include('inc/header.php');
 	When a user accesses the hearthstone visualisation page, the visualiser server sends the URL to the hearthstone API using an AJAX request using the API key as a custom header.
 </p>
 <p>
-	If you want to duplicate the following code remember to include jQuery and your JavaScript file on the HTML page, and remember to order jQuery before JavaScript to avoid any issues eg:<br><br>
+	If you want to duplicate the following code remember to include jQuery and your JavaScript file on the HTML page, and remember to order jQuery before JavaScript to avoid any issues<br><br>
 
 	HTML page:<br>
 	<pre>
@@ -72,6 +79,7 @@ include('inc/header.php');
 		<code>&lt;script type=&quot;text/javascript&quot; src=&quot;yourJSfile.js&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 	
+	<a id="ajax_anchor"></a>
 	yourJSfile.js:<br>
 	<pre>
 		<code>$.ajax({</code>
@@ -84,7 +92,7 @@ include('inc/header.php');
 		<code>  }</code>
 		<code>});</code>
 	</pre>
-	</p>
+</p>
 <p>
 	You need to update 'YOUR-RAPIDAPI-KEY-HERE' on line 4. Which can be found on RapidAPI, see #4 in the above picture<br><br> 
 
@@ -98,7 +106,7 @@ include('inc/header.php');
 <p>
 	Now that we have the data loaded from the hearthstone API we can display it.<br><br>
 
-	Various technologies exist to display the data but we will be using google charts - bar chart.<br><br>
+	Various technologies exist to display the data but we will be using the google charts - bar chart.<br><br>
 
 	To learn more about google charts please visit the exhaustive <a href="https://developers.google.com/chart/interactive/docs/gallery/barchart">google charts documentation</a><br><br>
 
@@ -190,6 +198,27 @@ include('inc/header.php');
 	To download the complete example code:<br><br>
 	<a href="media/hearthstone.zip" download="hearthstone.zip" class="download_button"><i class="fa fa-download"></i> Download</a><br><br>
 	You must still update the API Key in the JavaScript file on line 8.<br><br>
+</p>
+
+<a id="section4_anchor"></a>
+<h2>Further Reading</h2>
+<p>
+	To learn more about the techniques used here you can use the following resources:
+	<ul>
+		<li><a href="https://www.w3schools.com/">W3Schools</a><br>W3Schools is an excellent resource for anything related to HTML/CSS/JavaScript/jQuery and any number of other web technologies<br></li>
+		<li><a href="https://jquery.com/">jQuery</a><br>jQuery is used in various places for this website, it's a great resource of pre-built functions<br></li>
+		<li><a href="https://www.javascript.com/learn/strings">JavaScript - Learn</a><br>Learn JavaScript directly from JS itself<br></li>
+		<li><a href="https://developers.google.com/chart/interactive/docs/quick_start">Google Charts Documentation</a><br>Google Charts Documentation is extremeley helpful with tons of examples and easy to follow tutorials<br></li>
+		<li>If you ever get stuck - remember to check the console (F12) and google your problem - guarenteed you're not the first to have the same issue!</li>
+	</ul>
+</p>
+
+<a id="section5_anchor"></a>
+<h2>References</h2>
+<p>
+	<ul>
+		<li></li>
+	</ul>
 </p>
 
 <?php
