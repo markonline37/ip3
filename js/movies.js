@@ -69,11 +69,8 @@ function loadChart(){
 	    	tooltips: {
 	    		titleFontSize: 20,
 	    		bodyFontSize: 20
-	    	}
-
-	    	
+	    	}	
 	    }
- 
 	});
 }
 
@@ -164,9 +161,4 @@ function load() {
 	        });
 	    });		
 	});
-
-
-
 }
-
-
