@@ -10,9 +10,9 @@ include('inc/header.php');
 <p>
 	Data is everything in digital cartography and comes in a few additional formats beyond the JSON. One of them is GeoJSON. JSON data takes the form of a standard JavaScript object, nested to group data (“values”) by common parents (“keys”). This key-value format is second nature to any JavaScript developer and the basis of object-oriented programming. GeoJSON follows the same structure, but requires that the object contain the keys type, geometry, and properties. There are two values for type — Feature and FeatureCollection.  <br><br>
 
-	Now we will a little more in depth into GeoJson. First the most basic element of geographic data is the coordinate. This is a single number representing a single dimension: typically the dimensions are longitude and latitude. Sometimes there’s also a coordinate for elevation. Coordinates in GeoJSON are formatted like numbers in JSON: in a simple decimal format.  <br><br>
+	Now we will go further in depth into GeoJson. First the most essential element of geographic data is the coordinate. This is a single number representing a single dimension: typically the dimensions are longitude and latitude. Sometimes there’s also a coordinate for elevation. Coordinates in GeoJSON are formatted like numbers in JSON: in a simple decimal format.  <br><br>
 
-	Then position is an array of coordinates in order: this is the smallest unit that we can really consider ‘a place’ since it can represent a point on earth. GeoJSON describes an order for coordinates: they should go, in order – longitude, latitude and elevation. The order is not specific and can be changed, but longitude, latitude order matches the X, Y order of math and is used by data formats usually. <br><br>
+	Then position is an array of coordinates in order: this is the smallest unit that we can really consider ‘a place’ since it can represent a point on earth. GeoJSON describes an order for coordinates: they should go, in order – longitude, latitude and elevation. The order is not specific and can be changed, but longitude, latitude order matches the X, Y order of math and is used by data formats often. <br><br>
 
 	The geometry key is where things get interesting. GeoJSON is used for geographic data that we can plot on a map, but in order to do so we need to declare a geometric shape that best suits the geography data we’re trying to store. There are six geometry types available: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon.  <br><br>
 
@@ -22,7 +22,7 @@ include('inc/header.php');
 		<code>{ "type": "Point", "coordinates": [0, 0] } </code>
 	</pre>
 
-	LineString: To represent a line, you’ll need at least two places to connect: <br>
+	LineString: To represent a line, you’ll need at least two coordinates to connect: <br>
 
 	<pre>
 		<code>{ "type": "LineString", "coordinates": [[0, 0], [10, 10]] } </code>
@@ -43,9 +43,9 @@ include('inc/header.php');
 		<code>}</code>
 	</pre>
 	
-	The list of coordinates for Polygons is nested one more level than that for LineStrings. But holes explain the jump in complexity: polygons in GeoJSON are not just closed areas, but can have cut-out. For this reason, polygons introduce a new term: the LinearRing. LinearRings are loops of positions. LinearRings are either the exterior ring - positions that form the outside edge of the Polygon and define which parts are filled - or interior rings, which define the parts of the Polygon are empty. There can only be one exterior ring, and it’s always the first one. There can be any number of interior rings, including zero. Zero interior rings just means that the polygon doesn’t have any holes. <br><br>
+	The list of coordinates for Polygons is nested one more level than that for LineStrings. But holes explain the jump in complexity: polygons in GeoJSON are not just closed areas, but can have cut-outs. For this reason, polygons introduce a new term: the LinearRing. LinearRings are loops of positions. LinearRings are either the exterior ring - positions that form the outside edge of the Polygon and define which parts are filled - or interior rings, which define the parts of the Polygon are empty. There can only be one exterior ring, and it’s always the first one. There can be any number of interior rings, including zero. Zero interior rings just means that the polygon doesn’t have any holes. <br><br>
 
-	Features are this combination of geometry and properties. Geometries are shapes and nothing more. They’re a central part of GeoJSON, but most data that has something to do with the world isn’t simply a shape, but also has an identity and attributes: <br>
+	Features are a combination of geometry and properties. Geometries are shapes and nothing more. They’re a central part of GeoJSON, but most data that has something to do with the world isn’t simply a shape, but also has an identity and attributes: <br>
 
 	<pre>
 		<code>{</code>
@@ -60,7 +60,7 @@ include('inc/header.php');
 		<code>}</code>
 	</pre>
 	
-	Feature collection is just an array of Feature objects.  <br><br>
+	A feature collection is just an array of Feature objects.  <br><br>
 
 	There are very good example for the use of GeoJSON that can help you get a better understanding here: <a href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">Introduction to GEOJson and D3 JS</a><br><br><br><br><br>
 </p>
