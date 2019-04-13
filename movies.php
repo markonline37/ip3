@@ -18,7 +18,6 @@ For more information on this visualization visit <a href="moviestutorial.php">th
 You can hide/show genres by clicking on parts of the legend.
 </h3>
 
-<canvas id="chart" height="120"></canvas>
 <h3>Sort by:</h3>
 <button id = "revenue" onclick="revenueSort()" class = "genre">Revenue</button>
 <button id = "popularity" onclick="popularitySort()" class = "genre">Popularity</button>
