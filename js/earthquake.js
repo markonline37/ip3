@@ -1,8 +1,4 @@
 var map;
-//initMap() called when Google Maps API code is loaded - when web page is opened/refreshed 
-function initMap() {
-    populate();
-}
 
 var quakeFeeds = {
     "Past Hour": {
@@ -28,7 +24,7 @@ var quakeFeeds = {
     },
     "Past Month": {
         "All Earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson",
-        "All 1.0+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojso n",
+        "All 1.0+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.geojson",
         "All 2.5+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson",
         "All 4.5+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
         "All Significant": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
@@ -37,6 +33,11 @@ var quakeFeeds = {
 }
 
 var temp = 0;
+//initMap() called when Google Maps API code is loaded - when web page is opened/refreshed 
+function initMap() {
+    populate();
+}
+
 function makeChildProps(obj, currentProp) {
     var childProps = '';
 
