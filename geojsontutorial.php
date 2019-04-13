@@ -62,8 +62,14 @@ include('inc/header.php');
 	
 	Feature collection is just an array of Feature objects.  <br><br>
 
-	There are very good example for the use of GeoJSON that can help you get a better understanding here: <a href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">Introduction to GEOJson and D3 JS</a><br><br><br><br><br>
+	There are very good example for the use of GeoJSON that can help you get a better understanding here: <a href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">Introduction to GEOJson and D3 JS</a><br><br>
 </p>
+<p>
+	<h5>References</h5>
+	<a href="https://macwright.org/2015/03/23/geojson-second-bite?fbclid=IwAR1asjtf4EnodNp3Wl23sGhVclt-i8ZAF7VN8GcQ_X0Loa4Xohlvkdu4Xto">More than you ever wanted to know about GeoJSON by Tom Wright</a>
+	<a href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84?fbclid=IwAR0cKpNGijpDX-Ull_jtMc9aiAF2QD7Cej4T5FPgMwGGiasb0XhwxWFrktI">Introduction to Digital Cartography: GeoJSON and D3.js by Amy De Genaro</a>
+</p>
+<br><br><br>
 <?php
 include('inc/footer.php'); 
 ?>

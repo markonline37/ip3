@@ -60,7 +60,7 @@ include('inc/header.php');
 <a id="section2_anchor"></a>
 <h2>Asynchronous Javascript And Xml (AJAX)</h2>
 <p>
-	Quick overview of jQuery
+	Before learning about AJAX it is necessary to have a basic introduction to jQuery. jQuery is a JavaScript library that contains a lot of pre-written functions that are intended to be used as 'shortcuts' by allowing a developer
 	jQuery import
 	What is ajax - why would you use it (loading times etc)
 	How to use it
@@ -80,6 +80,13 @@ include('inc/header.php');
 <h2>Data Visualisation Techniques</h2>
 <p>
 	
+</p>
+
+<a id="section5_anchor"></a>
+<h2>References</h2>
+<p>
+	<a href="https://jquery.com/">jQuery</a>
+	<a href="https://www.w3schools.com/jquery/jquery_intro.asp">W3Schools - jQuery Introduction</a>
 </p>
 
 <?php
