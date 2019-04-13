@@ -30,7 +30,7 @@ You can hide/show genres by clicking on parts of the legend.
 </div>
 
 <div id="info"></div>
-<br><br><br>
+<br>
 <?php
 include('inc/footer.php'); 
 ?>
