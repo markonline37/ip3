@@ -13,9 +13,9 @@ Useful tutorial information with adequate references to external technologies ut
 
 This tutorial is discussing the <a href="weather.php">Weather Visualisation</a>. <br><br>
 
-The weather page allows a user to view a weather forecast based on a location. By default the location is based on the clients IP address which will provide a general, but by no means accurate, location which should suffice to quickly view the weather.<br><br>
+The weather page allows a user to view the weather forecast based on a location. By default the location is based on the clients IP address which will provide a general, but by no means accurate, location which should suffice to quickly view the weather.<br><br>
 
-Users can search for a specific location by entering the name, or can search for a location by latitude and longitude. This will cause the weather information to update and display the weather information for the searched location.<br><br>
+Users can search for a specific location by entering the name, or can search for a location by latitude and longitude. This will cause the weather information to update and display the weather forecast for the searched location.<br><br>
 
 This tutorial uses key concepts learned in the JavaScript tutorial on API's, AJAX, and JSON:<br>
 <a href="javascripttutorial.php#section1_anchor">API's</a><br>

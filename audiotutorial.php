@@ -37,7 +37,7 @@ include('inc/header.php');
 		<code>&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</code>
 		<code>&lt;audio id=&quot;myAudio&quot; controls&gt;</code>
 	</pre>
-	The canvas tag is for animating the graph on and the audio tag is for providing an interface for the music.<br><br>
+	The canvas tag is for animating the graph and the audio tag is for providing an interface for the music.<br><br>
 </p>
 
 <a id="section2_anchor"></a>
@@ -104,7 +104,7 @@ include('inc/header.php');
 	This code looks complicated but is fairly simple once understood.<br>
 	On line 3 and 4 the context is assigned for the canvas element.<br>
 	On line 7 a variable named myAudio is assigned to the element from html.<br>
-	On line 9 the src is asigned based on line 6, the src is then 'played' on line 11.<br>
+	On line 9 the src is assigned based on line 6, the src is then 'played' on line 11.<br>
 	On line 13, a new AudioContext is created.<br>
 	On line 14 context is used to create a source using variable myAudio.<br>
 	On line 16 an audiocontext analyser is created.<br>
