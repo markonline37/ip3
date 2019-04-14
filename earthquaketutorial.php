@@ -168,6 +168,13 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 	    </pre>
 	Each infowindow contains a link that opens a new tab and displays information relevant to the location. 
 	</p>
+	<h2>References</h2>
+	<p>
+		<ul>
+			<li><a href="https://www.explainthatstuff.com/earthquakes.html">General educational information on earthquakes</a></li>
+			<li><a href="https://earthquake.usgs.gov/">News and data source for earthquakes</a></li>
+		</ul>
+	</p>
 	<br><br>      
 	        
 	        

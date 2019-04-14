@@ -131,6 +131,14 @@ Next would come the ajax call:
 	disableButtons contains code that temporarily disables the buttons. This is not required, but it helps if the <br>
 	user clicks a button quickly multiple times and the chart and ajax calls struggle to keep up. updateChart is primarily<br>
 	composed of the ajax call referenced above. 
+
+<h2>References</h2>
+<p>
+	<ul>
+		<li><a href="https://www.themoviedb.org/">Data source and website for exploring movies</a></li>
+		<li><a href="https://www.chartjs.org/docs/latest/">Documentation for chart.js, the visualization method used</a></li>
+	</ul>
+</p>
 <br><br>
 
 
