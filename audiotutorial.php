@@ -78,7 +78,7 @@ The canvas tag is for animating the graph and the audio tag is for providing an 
 	<code>        ctx.fillStyle = "#000";</code>
 	<code>        ctx.fillRect(0, 0, WIDTH, HEIGHT);</code>
 	<code></code>
-	<code>        for (var i = 0; i < bufferLength; i++) {</code>
+	<code>        for (var i = 0; i &lt; bufferLength; i++) {</code>
 	<code>            barHeight = dataArray[i];</code>
 	<code>            var r = barHeight + (25 * (i/bufferLength));</code>
 	<code>            var g = 250 * (i/bufferLength);</code>

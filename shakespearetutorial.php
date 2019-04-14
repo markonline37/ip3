@@ -97,10 +97,10 @@ The drawCloud function works by setting a minimum and maximum font size and weig
 	<code>	var newData = {};</code>
 	<code>	var max = 0;</code>
 	<code>	$.each(data, function(w){</code>
-	<code>		if(!max || data[w] > max){</code>
+	<code>		if(!max || data[w] &gt; max){</code>
 	<code>			max = data[w];</code>
 	<code>		}</code>
-	<code>		if(data[w] > minCount){</code>
+	<code>		if(data[w] &gt; minCount){</code>
 	<code>			newData[w] = data[w];</code>
 	<code>		}</code>
 	<code>	});</code>
@@ -113,10 +113,10 @@ The drawCloud function works by setting a minimum and maximum font size and weig
 	<code>		var fontSize = maxFont*percent;</code>
 	<code>		var weight = Math.ceil(weight/100)*100;</code>
 	<code>		fontSize = Math.ceil(fontSize);</code>
-	<code>		if(weight < minWeight){</code>
+	<code>		if(weight &lt; minWeight){</code>
 	<code>			weight = minWeight;</code>
 	<code>		}</code>
-	<code>		if(fontSize < minFont){</code>
+	<code>		if(fontSize &lt; minFont){</code>
 	<code>			fontSize = minFont;</code>
 	<code>		}</code>
 	<code></code>
@@ -125,7 +125,7 @@ The drawCloud function works by setting a minimum and maximum font size and weig
 	<code>		string+="&lt;/div&gt;";</code>
 	<code>		array.push(string);</code>
 	<code>	});</code>
-	<code>	for(var i = 0; i < array.length; i++){</code>
+	<code>	for(var i = 0; i &lt; array.length; i++){</code>
 	<code>		builder+=array[i];</code>
 	<code>	}</code>
 	<code>	var element = document.getElementById("books_container");</code>

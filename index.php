@@ -30,7 +30,7 @@ include('inc/header.php');
 	<div class="col-5left">
 		<h5>Earthquake Visualisation</h5>
 		<div class="col-5left">
-			<a href="earthquake.php"><img src="images/earthquake.png" alt="Example earthquake visualisation page" class="homepageImage"></a>
+			<a href="earthquake.php"><img src="images/earthquake.jpg" alt="Example earthquake visualisation page" class="homepageImage"></a>
 		</div>
 		<div class="col-5">
 			<div class="booster">
@@ -46,7 +46,7 @@ include('inc/header.php');
 	<div class="col-5">
 		<h5>JavaScript Tutorial</h5>
 		<div class="col-5left">
-			<a href="javascripttutorial.php"><img src="images/tutorial.png" alt="Example javascript tutorial page" class="homepageImage"></a>
+			<a href="javascripttutorial.php"><img src="images/tutorial.jpg" alt="Example javascript tutorial page" class="homepageImage"></a>
 		</div>
 		<div class="col-5">
 			<div class="booster">
@@ -63,7 +63,7 @@ include('inc/header.php');
 	<div class="col-5left">
 		<h5>Weather Visualisation</h5>
 		<div class="col-5left">
-			<a href="weather.php"><img src="images/weather.png" alt="Example weather visualisation page" class="homepageImage"></a>
+			<a href="weather.php"><img src="images/weather.jpg" alt="Example weather visualisation page" class="homepageImage"></a>
 		</div>
 		<div class="col-5">
 			<div class="booster">
@@ -79,7 +79,7 @@ include('inc/header.php');
 	<div class="col-5">
 		<h5>GeoJson Tutorial</h5>
 		<div class="col-5left">
-			<a href="geojsontutorial.php"><img src="images/geojson.png" alt="Example geojson tutorial page" class="homepageImage"></a>
+			<a href="geojsontutorial.php"><img src="images/geojson.jpg" alt="Example geojson tutorial page" class="homepageImage"></a>
 		</div>
 		<div class="col-5">
 			<div class="booster">

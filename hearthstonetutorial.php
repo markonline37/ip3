@@ -132,7 +132,7 @@ We will now add 2 new functions that process the JSON array as data and then dra
 	<code>  var hasHealth = 0;</code>
 	<code>  var oneHealth = 0;</code>
 	<code>  var twoHealth = 0;</code>
-	<code>  for(var i = 0; i < data['Basic'].length; i++){</code>
+	<code>  for(var i = 0; i &lt; data['Basic'].length; i++){</code>
 	<code>   if(data['Basic'][i].hasOwnProperty('health')){</code>
 	<code>      hasHealth++;</code>
 	<code>      if(data['Basic'][i].health === 1){</code>
