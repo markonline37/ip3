@@ -11,7 +11,7 @@ include('inc/header.php');
 <p>
 	This is the tutorial written for the <a href="shakespeare.php">Shakespeare visualisation</a><br><br>
 
-	The Shakespeare visualisation works by creating a frequency map of each individual word and counting each occurance. These occurances are then plotted into a chart and their font size and font weight are evaluated verses the maximum occurance.<br><br>
+	The Shakespeare visualisation works by creating a frequency map of each individual word and counting each occurance. These occurances are then plotted into a chart and their font size and font weight are evaluated against the maximum occurance.<br><br>
 
 	This tutorial expects a basic understanding of JavaScript, if you need to learn the basics or a refresher; <a href="https://www.w3schools.com/js/js_intro.asp">w3schools - JavaScript Introduction</a> is an excellent choice.
 </p>
@@ -91,7 +91,7 @@ include('inc/header.php');
 
 	The common words array just contains common everyday words, the original list was sourced from: <a href="https://gist.github.com/gravitymonkey/2406023#file-gistfile1-txt">A Github Repo</a> and was updated to include the names of the actors.<br><br>
 
-	The drawCloud function works by setting a minimum and maximum font size and weight. The maximum occurance of any single word is found and the maximum set at 100%, all of the others are evaluated based on occurance verses maximum and their percentage font size and weight is set. If the words are below a minimum font size and weight, then apply the minimum size. This is to avoid any words being written that are 2px font size - which is absolutely unreadable. Additionally a minimum count check is added to stop words that only appear once or twice drawing, as English consists of only 26 letters but 171,476 words in use (<a href="https://en.oxforddictionaries.com/explore/how-many-words-are-there-in-the-english-language/">According to the Oxford Dictionary</a>) there will be too many results if the minimum frequency is set too low.<br><br>
+	The drawCloud function works by setting a minimum and maximum font size and weight. The maximum occurance of any single word is found and the maximum set at 100%, all of the others are evaluated based on occurance against maximum and their percentage font size and weight is set. If the words are below a minimum font size and weight, then apply the minimum size. This is to avoid any words being written that are 2px font size - which is absolutely unreadable. Additionally a minimum count check is added to stop words that only appear once or twice drawing, as English consists of only 26 letters but 171,476 words in use (<a href="https://en.oxforddictionaries.com/explore/how-many-words-are-there-in-the-english-language/">According to the Oxford Dictionary</a>) there will be too many results if the minimum frequency is set too low.<br><br>
 	<pre>
 		<code>function drawCloud(data){</code>
 		<code>	var maxFont = 48; // maximum font size</code>

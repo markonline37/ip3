@@ -88,7 +88,7 @@ In the visualization a set of earthquake data is retrieved and displayed on a ma
 	    <code>&lt;script async defer src=&quot;https://maps.googleapis.com/maps/api/js?key=[key]&callback=initMap&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 	This part of the page also requires some other tags, as the javascript file will need reference points for the buttons and map. A div where the set of buttons will<br>
-	be inserted should be included, as well as a div for the map to be displayed in. These should be assigned with appropriate ids.<br>
+	be inserted should be included, as well as a div for the map to be displayed in. These should be assigned with appropriate id's.<br>
 	Additional tags for formatting are also recommended. The html finishes off with a reference to the javascript file, which will be responsible for creating the buttons and loading the map. <br>
 	<pre>
 	    <code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/earthquake.js&quot;&gt;&lt;/script&gt;</code>
