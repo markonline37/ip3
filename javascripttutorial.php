@@ -159,9 +159,9 @@ include('inc/header.php');
 	<br>
 	<br>
 	Weather Data Visualisation:<br>
-	Uses JSON data loaded from an API to display weather information such as forecast and a location map.<br>
+	Uses JSON data loaded from an API to display a weather forecast<br>
 	<a href="weather.php">Link to weather visualisation</a><br>
-	<a href="weathertutorial.php">Link to weather visualisation tutorial</a><br>
+	<a href="weathertutorial.php#section2_anchor">Link to weather visualisation tutorial</a><br>
 	<br>
 	Movies Data Visualisation:<br>
 	Uses JSON data loaded from an API to display information on movies by genre plotted on a chart.<br>
@@ -172,19 +172,19 @@ include('inc/header.php');
 	Hearthstone Data Visualisation:<br>
 	Uses JSON data loaded from an API to display information on each set in the game.<br>
 	<a href="hearthstone.php">Link to Hearthstone visualisation</a><br>
-	<a href="hearthstonetutorial">Link to Hearthstone visualisation tutorial</a><br>
+	<a href="hearthstonetutorial#section3_anchor">Link to Hearthstone visualisation tutorial</a><br>
 	<br>
 	<br>
 	Audio Data Visualisation:<br>
 	Uses local audio data to display audio visually<br>
 	<a href="audio.php">Link to audio visualisation</a><br>
-	<a href="audiotutorial.php">Link to audio visualisation tutorial</a><br>
+	<a href="audiotutorial.php#section2_anchor">Link to audio visualisation tutorial</a><br>
 	<br>
 	<br>
 	Shakespeare Data Visualisation:<br>
 	Uses local copies of several of shakespeares most popular works to perform a word count of his use of outdated modern-English<br>
 	<a href="shakespeare.php">Link to Shakespeare visualisation</a><br>
-	<a href="shakespearetutorial.php">Link to Shakespeare visualisation</a><br>
+	<a href="shakespearetutorial.php#section2_anchor">Link to Shakespeare visualisation</a><br>
 </p>
 
 <a id="section5_anchor"></a>
