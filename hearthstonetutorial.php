@@ -10,18 +10,18 @@ include('inc/header.php');
 <h1>Hearthstone Tutorial</h1>
 
 <P>
-	This is the tutorial written for the <a href="hearthstone.php">hearthstone visualisation.</a><br>
+	This is the tutorial written for the <a href="hearthstone.php">hearthstone visualisation.</a><br><br>
+
+	Hearthstone is a digital card game that was created by Blizzard, It features many of the creatures and characters within Blizzards Warcraft series.	In Hearthstone there are 9 classes to choose from each with their own set of cards exclusive to their class as well as a large group of ‘neutral cards’ that any class can use. The basic premise of the game is to use a combination of minion and spell cards in order to reduce the enemy players health to 0 and win.<br><br>
+
+	The visualisation page displays the number of different cards available in Hearthstone for each of the sets. <br><br>
+
 	To understand key concepts discussed here such as API's, AJAX requests and JSON arrays please read the <a href="javascripttutorial.php">JavaScript tutorial</a><br>
 	A complete working example is at the bottom of the page - you must still update the API Key in the JavaScript file on line 8.<br>
 	Links to further reading on relevant topics are available at the bottom of the page.
 </P>  
-<p>
-	Creating the data visualisation involves 2 steps:
-	<ol>
-		<li>Gathering the data</li>
-		<li>Displaying the data</li>
-	</ol>
-</P>
+
+<h5>Menu</h5>
 <p>
 	<a href="#section1_anchor">Gathering the data</a><br>
 	<a href="#section3_anchor">Displaying the processed data</a><br>
@@ -30,7 +30,7 @@ include('inc/header.php');
 </p>
 
 <a id="section1_anchor"></a>
-<h2>Gathering the Data</h2>
+<h5>Gathering the Data</h5>
 <p>
 	The data used in the hearthstone visualisation is taken from a website called RapidAPI (link to <a href="https://www.rapidapi.com/">RapidAPI</a>) that hosts user created API's. Some of the API's available on RapidAPI are free to use, and some are subscription based. Luckily the hearthstone API is free to use and is very comprehensive.
 </p>
@@ -39,7 +39,7 @@ include('inc/header.php');
 	In order to use RapidAPI and explore the hearthstone API you will need to register for a free account on RapidAPI.
 </p>
 <p>
-	The hearthstone API used in the hearthstone visualisation is a data driven API, the API responds to requests for data on the video game hearthstone with a JSON array based on the request URL.
+	The hearthstone API used in the hearthstone visualisation is a data driven API, the API responds to requests for data on the video game hearthstone with a JSON array based on the request URL. This information can be on every single card in every set, individual sets, individual cards and many other options.
 </p>
 <p>
 	Once you're logged into RapidAPI you can begin to explore the hearthstone API and the picture below is what you will see.<br>
@@ -73,14 +73,14 @@ include('inc/header.php');
 <p>
 	If you want to duplicate the following code remember to include jQuery and your JavaScript file on the HTML page, and remember to order jQuery before JavaScript to avoid any issues<br><br>
 
-	HTML page:<br>
+	<h3>HTML page:</h3>
 	<pre>
 		<code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code>
 		<code>&lt;script type=&quot;text/javascript&quot; src=&quot;yourJSfile.js&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 	
 	<a id="ajax_anchor"></a>
-	yourJSfile.js:<br>
+	<h3>yourJSfile.js:</h3>
 	<pre>
 		<code>$.ajax({</code>
 		<code>  url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards",</code>
@@ -102,7 +102,7 @@ include('inc/header.php');
 </p>
 
 <a id="section3_anchor"></a>
-<h2>Displaying the processed data</h2>
+<h5>Displaying the processed data</h5>
 <p>
 	Now that we have the data loaded from the hearthstone API we can display it.<br><br>
 
@@ -112,21 +112,21 @@ include('inc/header.php');
 
 	In order to use google charts we need to include it on the html page, placement should be above the script to include JavaScript to avoid any issues.<br><br>
 
-	HTML Page:<br>
+	<h3>HTML Page:</h3>
 	<pre>
 		<code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://www.gstatic.com/charts/loader.js&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 
 	Additonally the google charts needs somewhere to draw into so we'll also include a blank div:<br><br>
 
-	HTML page:<br>
+	<h3>HTML page:</h3>
 	<pre>
 		<code>&lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;</code>
 	</pre>
 	
 	Google charts now needs to be 'loaded' so on the JavaScript file write the following.<br><br>
 
-	yourJSfile.js:<br>
+	<h3>yourJSfile.js:</h3>
 	<pre>
 		<code>google.charts.load('current', {packages: ['corechart', 'bar']});</code>
 		<code>google.charts.setOnLoadCallback(myFunction);</code>
@@ -201,7 +201,7 @@ include('inc/header.php');
 </p>
 
 <a id="section4_anchor"></a>
-<h2>Further Reading</h2>
+<h5>Further Reading</h5>
 <p>
 	To learn more about the techniques used here you can use the following resources:
 	<ul>
@@ -214,11 +214,14 @@ include('inc/header.php');
 </p>
 
 <a id="section5_anchor"></a>
-<h2>References</h2>
+<h5>References</h5>
 <p>
 	<ul>
-		<li></li>
+		<li><a href="https://playhearthstone.com/en-gb/">Hearthstone</a></li>
+		<li><a href="https://developers.google.com/chart/interactive/docs/">Google Charts Documentation</a></li>
+		<li><a href="https://rapidapi.com/omgvamp/api/hearthstone">Hearthstone API</a></li>
 	</ul>
+	<br><br>
 </p>
 
 <?php
