@@ -3,6 +3,7 @@ $title = 'Earthquake Tutorial';
 $description = 'Earthquake Tutorial';
 include('inc/header.php');
 ?>
+<link href="css/tutorial.css" rel="stylesheet" type="text/css">
 
 <h1>Earthquake Tutorial</h1>
 
@@ -53,15 +54,15 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 <h3>HTML</h3>
 <p>To use the resources mentioned above, a few script tags are created in HTML:<br>
 	<pre>
-		<code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code>
-		<code>&lt;script src=&quot;https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js&quot;&gt;&lt;/script&gt;</code>
-		<code>&lt;script async defer src=&quot;https://maps.googleapis.com/maps/api/js?key=[key]&callback=initMap&quot;&gt;&lt;/script&gt;</code>
+	    <code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code>
+	    <code>&lt;script src=&quot;https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js&quot;&gt;&lt;/script&gt;</code>
+	    <code>&lt;script async defer src=&quot;https://maps.googleapis.com/maps/api/js?key=[key]&callback=initMap&quot;&gt;&lt;/script&gt;</code>
 	</pre>
 	This part of the page also requires some other tags, as the javascript file will need reference points for the buttons and map. A div where the set of buttons will<br>
 	be inserted should be included, as well as a div for the map to be displayed in. These should be assigned with appropriate ids.<br>
 	Additional tags for formatting are also recommended. The html finishes off with a reference to the javascript file, which will be responsible for creating the buttons and loading the map. 
 	<pre>
-		<code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/earthquake.js&quot;&gt;&lt;/script&gt;</code>
+	    <code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/earthquake.js&quot;&gt;&lt;/script&gt;</code>
 	</pre>	
 </p>
 <h3>Javascript</h3>
@@ -69,7 +70,7 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 	As is tradition in programming, a few variables should be declared at the start of the file. Of note is a javascript object used<br>
 	to display the buttons. A section of it would look like this:
 	<pre>
-		<code>var quakeFeeds = {</code>
+	    <code>var quakeFeeds = {</code>
 	    <code>"Past Hour": {</code>
 	    <code>    "All Earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",</code>
 	    <code>    "All 1.0+": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson",</code>
@@ -81,10 +82,10 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 	This will be looped through to create the buttons that alter the data feed.
 	<p>Once the page is loaded javascript calls this function:
 	<pre>
-		<code>window.onload = function(){</code>
-	    <code>		document.getElementById('feed15').click();</code>
-	    <code>		resizer();</code>
-	    <code>	}</code>
+	    <code>window.onload = function(){</code>
+	    <code>	document.getElementById('feed15').click();</code>
+	    <code>	resizer();</code>
+	    <code>}</code>
 	</pre>	
 	One of the buttons is clicked manually in order to load a preliminary set of data. <br>
 	The "resizer" function adjusts the map size according to the window's size.</p>
@@ -92,30 +93,30 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 	<p>The bulk of the js happens once the google maps api code is loaded, which triggers the initMap() function. <br>
 		Once this occurs the map can created:<br>
 		<pre>
-		<code>map = new google.maps.Map(document.getElementById("map2"), {</code>
-	    <code>		zoom: 2,</code>
-	    <code>		center: new google.maps.LatLng(2.8, -187.3), </code>
-	    <code>		mapTypeId: 'terrain' </code>
-	    <code>	});</code>
+	    <code>map = new google.maps.Map(document.getElementById("map2"), {</code>
+	    <code>	zoom: 2,</code>
+	    <code>	center: new google.maps.LatLng(2.8, -187.3), </code>
+	    <code>	mapTypeId: 'terrain' </code>
+	    <code>});</code>
 		</pre>
 	</p>
 	<p>
 		The buttons can be dynamically created by looping through the already mentioned javascript object:
 		<pre>
-			<code>for (var prop in quakeFeeds) {</code>
-		    <code>		if (!quakeFeeds.hasOwnProperty(prop)) {</code>
-		    <code>		continue;</code>
-		    <code>		mapTypeId: 'terrain' </code>
-		    <code>	}</code>
-		    <code>		$('#feedSelector').append(&quot;&lt;div class=\&quot;col-10\&quot;&gt;&lt;div class=\&quot;btn-group\&quot;&gt;&lt;h6&gt;&quot; + prop + &quot;&lt;/h6&gt;&quot; + makeChildProps(quakeFeeds, prop)+&quot;&lt;/div&gt;&lt;div class=\&quot;col-10\&quot;&gt;&lt;/div&gt;&quot;);</code>
-		    <code>	}</code>
+	    <code>for (var prop in quakeFeeds) {</code>
+	    <code>	if (!quakeFeeds.hasOwnProperty(prop)) {</code>
+	    <code>		continue;</code>
+	    <code>		mapTypeId: 'terrain' </code>
+	    <code>	}</code>
+	    <code>	$('#feedSelector').append(&quot;&lt;div class=\&quot;col-10\&quot;&gt;&lt;div class=\&quot;btn-group\&quot;&gt;&lt;h6&gt;&quot; + prop + &quot;&lt;/h6&gt;&quot; + makeChildProps(quakeFeeds, prop)+&quot;&lt;/div&gt;&lt;div class=\&quot;col-10\&quot;&gt;&lt;/div&gt;&quot;);</code>
+	    <code>}</code>
 		</pre>
 	</p>
 
 	<p>
 		These buttons now need a function to define what they do when clicked:
 		<pre>
-		<code>$('.feed_name').click(function (e) {</code>
+	    <code>$('.feed_name').click(function (e) {</code>
 		</pre>
 	</p>
 
@@ -123,12 +124,12 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 		What should happen when one of these buttons is clicked? A new set of data should be loaded.<br>
 		This is done using ajax:
 		<pre>
-			<code>$.ajax({</code>
-            <code>			url: $(e.target).data('feedurl'),</code>
-            <code>			error: function () {</code>
-            <code>				$('#info').html('&lt;p&gt;An error has occurred&lt;/p&gt;');</code>
-            <code>			},</code>
-            <code>			success: function (data) {</code>
+	    <code>$.ajax({</code>
+            <code>	url: $(e.target).data('feedurl'),</code>
+            <code>	error: function () {</code>
+            <code>	    $('#info').html('&lt;p&gt;An error has occurred&lt;/p&gt;');</code>
+            <code>	},</code>
+            <code>	success: function (data) {</code>
 		</pre>
 		The url recieved from the clicked button was assigned its values in the makeChildProps function called above in the loop.<br>
 	</p>
@@ -137,26 +138,37 @@ Naturally, the user would need a key and a latitude and longitude to use this ur
 		JQuery has a $.each function that allows us to loop through each dataset and parse the values. In this case,<br>
 		the position of the markers on the map are set with longitude and latitude. 
 		<pre>
-		<code>$.each(data.features, function (key, val) {</code>
-	    <code>		var coords = val.geometry.coordinates;</code>
-        <code>		var latLng = new google.maps.LatLng(coords[1], coords[0]);</code>
-        <code>		var marker = new google.maps.Marker({</code>
-        <code>			position: latLng,</code>
-        <code>			map: map</code>
-    	<code>		});</code>
+	    <code>$.each(data.features, function (key, val) {</code>
+	    <code>	var coords = val.geometry.coordinates;</code>
+            <code>	var latLng = new google.maps.LatLng(coords[1], coords[0]);</code>
+    	    <code>	var marker = new google.maps.Marker({</code>
+    	    <code>		position: latLng,</code>
+    	    <code>		map: map</code>
+	    <code>	});</code>
         </pre>
     </p>
 
     <p>
     Clusters are relatively easy to set up, but the markers above need to be stored in an array so they can be used here: <br>
     <pre>
-		<code>var markerCluster = new MarkerClusterer(map, markers, {</code>
-        <code>     		imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'</code> 
-        <code>	});</code>
+	    <code>var markerCluster = new MarkerClusterer(map, markers, {</code>
+            <code>	imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'</code> 
+            <code>});</code>
     </pre>
 	</p>
-
-	        
+	<p>
+	Infowindows are also implemented in the earthquake visualizations and they are setup similarly to clusters, but they need a listener:
+		<pre>
+	    <code>var infowindow = new google.maps.InfoWindow({</code>
+	    <code>    content: &quot;&lt;h3&gt;&quot; + val.properties.title + &quot;&lt;/h3&gt;&lt;a href='&quot; + &quot;locationinfo.php&quot; + &quot;?lat=&quot; + coords[1] + &quot;&long=&quot; + coords[0] + &quot;'target='_blank'&quot; + &quot;&gt;Details&lt;/a>&quot;</code>
+	    <code>});</code>
+	    <code>marker.addListener('click', function (data) {</code>
+	    <code>    infowindow.open(map, marker);</code>
+	    <code>});</code>
+	    </pre>
+	Each infowindow contains a link that opens a new tab and displays information relevant to the location. 
+	</p>
+	<br><br>      
 	        
 	        
     

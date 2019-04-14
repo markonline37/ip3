@@ -135,7 +135,7 @@ function disableButtons(){
 
 function revenueSort(){
 	disableButtons();
-
+	
 	sortBy = 'revenue';
 	myChart.options.title.text = 'Genre distribution of 20 highest earning movies';
 	updateChart();
