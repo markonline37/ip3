@@ -42,16 +42,16 @@ include('inc/header.php');
 
 	Examples of web-based data-driven API's:<br>
 	<a href="https://rapidapi.com/omgvamp/api/hearthstone">Hearthstone API</a><br>
-	As used in the <a href="hearthstone.php">Hearthstone Visualisation</a> page, discussed in the <a href="hearthstonetutorial.php">Hearthstone Tutorial</a> page.<br>
+	As used in the <a href="hearthstone.php">Hearthstone Visualisation</a> page, discussed in the <a href="hearthstonetutorial.php#section1_anchor">Hearthstone Tutorial</a> page.<br>
 	<br>
-	<a href="">Movies API</a><br>
-	As used in the <a href="movies.php">Movies Visualisation</a> page, discussed in the <a href="moviestutorial.php">Movies Tutorial</a> page.<br>
+	<a href="https://www.themoviedb.org/">Movies API</a><br>
+	As used in the <a href="movies.php">Movies Visualisation</a> page, discussed in the <a href="moviestutorial.php#section1_anchor">Movies Tutorial</a> page.<br>
 	<br>
-	<a href="">Weather API</a><br>
-	As used in the <a href="weather.php">Weather Visualisation</a> page, discussed in the <a href="weathertutorial.php">Weather Tutorial</a> page.<br>
+	<a href="https://www.apixu.com/api-explorer.aspx">Weather API</a><br>
+	As used in the <a href="weather.php">Weather Visualisation</a> page, discussed in the <a href="weathertutorial.php#section1_anchor">Weather Tutorial</a> page.<br>
 	<br>
-	<a href="">Earthquake API</a><br>
-	As used in the <a href="earthquake.php">Earthquake Visualisation</a> page, discussed in the <a href="earthquaketutorial.php">Earthquake Tutorial</a> page.<br>
+	<a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/">Earthquake API</a><br>
+	As used in the <a href="earthquake.php">Earthquake Visualisation</a> page, discussed in the <a href="earthquaketutorial.php#section2_anchor">Earthquake Tutorial</a> page.<br>
 	<br>
 	Working with these web-based data-driven API's all follow a similar process in which an AJAX request (see the AJAX section below) is made to the API based on a URL with the API replying with the requested data in a JSON format (see the JSON section below). Please note that JSON is not the only available data option and some API's use XML (eXtensible Markup Language) to format the data.<br><br>
 
@@ -155,7 +155,7 @@ include('inc/header.php');
 	Earthquake Data Visualisation:<br>
 	Uses GeoJson data loaded from an API to plot earthquakes on a google maps map.<br>
 	<a href="earthquake.php">Link to earthquake visualisation</a><br>
-	<a href="earthquaketutorial">Link to earthquake visualisation tutorial</a><br>
+	<a href="earthquaketutorial.php#section3_anchor">Link to earthquake visualisation tutorial</a><br>
 	<br>
 	<br>
 	Weather Data Visualisation:<br>
@@ -166,7 +166,7 @@ include('inc/header.php');
 	Movies Data Visualisation:<br>
 	Uses JSON data loaded from an API to display information on movies by genre plotted on a chart.<br>
 	<a href="movies.php">Link to movies visualisation</a><br>
-	<a href="moviestutorial.php">Link to movies visualisation tutorial</a><br>
+	<a href="moviestutorial.php#section2_anchor">Link to movies visualisation tutorial</a><br>
 	<br>
 	<br>
 	Hearthstone Data Visualisation:<br>

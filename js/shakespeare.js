@@ -95,7 +95,7 @@ function drawCloud(data){
 	var minFont = 14;
 	var maxWeight = 900;
 	var minWeight = 100;
-	var minCount = 10;
+	var minCount = 1;
 	var array = [];
 
 	var newData = {};

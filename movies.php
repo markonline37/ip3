@@ -12,11 +12,14 @@ include('inc/header.php');
 
 <h1>Movies</h1>
 
-<h3>This page shows the genre distribution of the top movies of each year in 3 different criteria: revenue, popularity, and rating.<br>
-The data is sourced from <a href="https://www.themoviedb.org/">tmdb</a> and the popularity and rating is determined by user activity on their website. <br>
-For more information on this visualization visit <a href="moviestutorial.php">this page</a>.<br><br>
-You can hide/show genres by clicking on parts of the legend.
-</h3>
+<p>
+	This page shows the genre distribution of the top movies of each year in 3 different criteria: revenue, popularity, and rating.<br>
+	The data is sourced from <a href="https://www.themoviedb.org/">tmdb</a> and the popularity and rating is determined by user activity on their website. <br>
+	For more information on this visualization visit <a href="moviestutorial.php">this page</a>.<br><br>
+	
+
+	You can hide/show genres by clicking on parts of the legend.
+</p>
 
 <h3>Sort by:</h3>
 <button id = "revenue" onclick="revenueSort()" class = "genre">Revenue</button>
