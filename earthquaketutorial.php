@@ -207,6 +207,7 @@ In the visualization a set of earthquake data is retrieved and displayed on a ma
 	<ul>
 		<li><a href="https://www.explainthatstuff.com/earthquakes.html">General educational information on earthquakes</a></li>
 		<li><a href="https://earthquake.usgs.gov/">News and data source for earthquakes</a></li>
+		<li><a href="https://developers.google.com/maps/documentation/javascript/tutorial">Documentation for google maps API</a></li>
 	</ul>
 </p>
 <br><br>
