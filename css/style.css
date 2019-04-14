@@ -39,6 +39,10 @@ body, html {
 	width: auto;
 }
 
+.booster {
+	min-height: 0px;
+}
+
 h1 {
 	background-color: #333;
 	font-size: 25px;
@@ -118,6 +122,10 @@ h5 {
 
 /* For desktop: */
 @media only screen and (min-width: 950px) {
+	.col-1left {
+		width: 10%;
+		padding-right: 28px;
+	}
 	.col-1 {
 		width: 10%;
 	}
@@ -172,5 +180,9 @@ h5 {
 	#centre_website {
 		height: 100%;
 		width: auto;
+	}
+
+	.booster {
+		min-height: 120px;
 	}
 }
