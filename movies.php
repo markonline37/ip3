@@ -7,7 +7,7 @@ include('inc/header.php');
 <link href="css/movies.css" rel="stylesheet" type="text/css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/movies.js"></script>
+<script src="js/movies.js"></script>
 
 
 <h1>Movies</h1>
@@ -26,7 +26,7 @@ include('inc/header.php');
 <button id = "popularity" onclick="popularitySort()" class = "genre">Popularity</button>
 <button id = "rating" onclick="ratingSort()" class = "genre">Rating</button>
 <br>
-<h3 id="loading"></h3>
+<div id="loading"></div>
 
 <div id="wrapper" class="chart">
     <canvas id="chart" ></canvas>

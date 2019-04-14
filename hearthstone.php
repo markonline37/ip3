@@ -5,9 +5,9 @@ include('inc/header.php');
 ?>
 <link href="css/hearthstone.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="js/hearthstonejson.js"></script>
-<script type="text/javascript" src="js/hearthstone.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="js/hearthstonejson.js"></script>
+<script src="js/hearthstone.js"></script>
 
 <h1>Hearthstone</h1>
 

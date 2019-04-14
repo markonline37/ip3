@@ -11,7 +11,7 @@ include('inc/header.php');
 	<div class="col-5left">
 		<h5>Merin Haslacher</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/merin.png" alt="Merin Haslacher Profile Picture">
+			<img class="profile-image" src="images/merin.png" alt="Merin Haslacher Profile Picture">
 			The roles I played in this project are that of a developer and report writer. My previous programming experiences have mostly been with java, but I have done web development before. Javascript is not new to me, but my experiences with ajax were limited before I started working on this project. The JSON file format was also relatively new to me, but my work on this project has also helped build my experience in this area. 
 		</p>
 		<p>
@@ -22,7 +22,7 @@ include('inc/header.php');
 	<div class="col-5">
 		<h5>Martin Abadzhiev</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/martin.png" alt="Martin Abadzhiev Profile Picture">
+			<img class="profile-image" src="images/martin.png" alt="Martin Abadzhiev Profile Picture">
 			I am Martin Abadzhiev a 23-year-old 3rd year computing student at Caledonian university. I come from Bulgaria where I was studying computer science at “High school for Natural science and Mathematics Nikola Obreshkov”. During my years at the university I worked on different group and individual projects. 
 		</p>
 		<p>
@@ -34,7 +34,7 @@ include('inc/header.php');
 	<div class="col-5left">
 		<h5>Zarko Ivanov</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/zarko.png" alt="Zarko Ivanov Profile Picture">
+			<img class="profile-image" src="images/zarko.png" alt="Zarko Ivanov Profile Picture">
 			Hey there,
 		</p>
 		<p>
@@ -48,7 +48,7 @@ include('inc/header.php');
 	<div class="col-5">
 		<h5>Mark Cottrell</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/mark.png" alt="Mark Cottrell Profile Picture">
+			<img class="profile-image" src="images/mark.png" alt="Mark Cottrell Profile Picture">
 			Mark Cottrell is a 3rd Year student studying at Glasgow Caledonian University (GCU) working towards a BSc (Hons) Computing. While studying at GCU he has worked on various projects including developing programs written in C and Java and has developed numerous websites using different technologies including; data-driven websites, HTML and PHP based websites, database-driven websites and Java based websites.
 		</p>
 		<p>
@@ -63,7 +63,7 @@ include('inc/header.php');
 	<div class="col-5left">
 		<h5>Basharat Afzal</h5>
 		<p>
-			<img class="profile-image" id="author1" src="images/bash.png" alt="Basharat Afzal Profile Picture">
+			<img class="profile-image" src="images/bash.png" alt="Basharat Afzal Profile Picture">
 			Basharat Afzal is a 21-year-old student in 3rd year at Glasgow Caledonian University. He came directly from Bearsden Academy. He has worked on many group projects throughout his time in university. 
 		</p>
 		<p>

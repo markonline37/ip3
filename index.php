@@ -4,58 +4,92 @@ $description = 'Website Homepage';
 include('inc/header.php');
 ?>
 <link href="css/index.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/index.js"></script>
+<script src="js/index.js"></script>
 
 <h1>Visualiser</h1>
 <div class="row">		
 	<div class="col-1left">&nbsp;</div>
 	<div class="col-8left">
-		<p>
-			Welcome to Visualizer!
-		</p>
-		<p>
-			3rd year computing students at Glasgow Caledonian University for Integrated Project 3, were tasked to create a website that visualised varying data sets and provided tutorials to reproduce the visualisations. Some of the datasets were selected for us and some were our own choice.
-		</p>
-		<p>
-			This website 'Visualizer' is what Group 25 created. To learn more head on over to the about us, or dive right into the visualisations or tutorials all by using the menu at the top of the page.
-		</p>
-		<p>
-		<a href="pdf/ip3specification.pdf" target="_blank">Integrated Project 3 - Specification</a> (Opens in a new tab)
-	</p>
+		<div class="booster2">
+			<p>
+				Welcome to Visualizer!
+			</p>
+			<p>
+				3rd year computing students at Glasgow Caledonian University for Integrated Project 3, were tasked to create a website that visualised varying data sets and provided tutorials to reproduce the visualisations. Some of the datasets were selected for us and some were our own choice.
+			</p>
+			<p>
+				This website 'Visualizer' is what Group 25 created. To learn more head on over to the about us, dive right into the visualisations or tutorials by using the menu at the top of the page or the links below.
+			</p>
+			<p>
+			<a href="pdf/ip3specification.pdf" target="_blank">Integrated Project 3 - Specification</a> (Opens in a new tab)
+			</p>
+		</div>
 	</div>
 	<div class="col-1">&nbsp;</div>		
 	<div class="col-10"></div>
-	<div class="col-thirdleft">
-		<h5>About Us</h5>
-		<div class="booster">
-			<p>
-				The about us page features a short biography about each of the members of group 25 including their names, age and their past places of education.
-			</p>
+	<div class="col-5left">
+		<h5>Earthquake Visualisation</h5>
+		<div class="col-5left">
+			<img src="images/earthquake.png" alt="Example earthquake visualisation page" class="homepageImage">
+		</div>
+		<div class="col-5">
+			<div class="booster">
+				<p>
+					The Earthquake visualisation webpage converts GeoJson based stastical data into a map with markers plotted, you can adjust the feeds to change the data that is displayed.
+				</p>
+			</div>
 		</div>
 		<div class="center">
-			<button type="button" class="main_button" id="aboutus_button" onclick="window.location='aboutus.php'">About Us Page</button>
+			<button type="button" class="main_button" id="earthquake_button" onclick="window.location='earthquake.php'">Earthquake Visualisation</button>
 		</div>
 	</div>
-	<div class="col-thirdleft">
-		<h5>Data Visualisation</h5>
-		<div class="booster">
+	<div class="col-5">
+		<h5>JavaScript Tutorial</h5>
+		<div class="col-5left">
+			<img src="images/tutorial.png" alt="Example javascript tutorial page" class="homepageImage">
+		</div>
+		<div class="col-5">
+			<div class="booster">
 			<p>
-				The data visualisations page features all 6 of the data visualisations that group 25 created including the Hearthstone page which features all the hearthstone sets and all of the cards within that set organised by mana cost and card type. 
+				The JavaScript tutorial is a companion tutorial to all of the other Visualisation tutorials by covering aspects such as API's, AJAX, and JSON.
 			</p>
 		</div>
+		</div>
 		<div class="center">
-			<button type="button" class="main_button" id="earthquake_button" onclick="window.location='visualisation.php'">Data Visualisation Page</button>
+			<button type="button" class="main_button" id="tutorial_button" onclick="window.location='javascripttutorial.php'">JavaScript Tutorial</button>
 		</div>
 	</div>
-	<div class="col-third">
-		<h5>Tutorial Page</h5>
-		<div class="booster">
-			<p>
-				 The tutorial page features several different tutorials on the different visualisation pages within the Visualiser website as well as a number of links to further reading on how to better use JSON and GEOJSON.
-			</p>
+	<div class="col-10"><br><br></div>
+	<div class="col-5left">
+		<h5>Weather Visualisation</h5>
+		<div class="col-5left">
+			<img src="images/weather.png" alt="Example weather visualisation page" class="homepageImage">
+		</div>
+		<div class="col-5">
+			<div class="booster">
+				<p>
+					The weather visualisation page provides user with a 6 day forecast based on their location, you can change the location by entering a location name or the longitude and latitude of an area.
+				</p>
+			</div>
 		</div>
 		<div class="center">
-			<button type="button" class="main_button" id="tutorial_button" onclick="window.location='tutorial.php'">Tutorial Page</button>
+			<button type="button" class="main_button" id="earthquake_button" onclick="window.location='weather.php'">Weather Visualisation</button>
+		</div>
+	</div>
+	<div class="col-5">
+		<h5>GeoJson Tutorial</h5>
+		<div class="col-5left">
+			<img src="images/geojson.png" alt="Example geojson tutorial page" class="homepageImage">
+		</div>
+		<div class="col-5">
+			<div class="booster">
+			<p>
+				The GeoJson tutorial page features several different tutorials that explains the fundamentals of using GeoJson using the visualisations as examples. There are also a number of links to further reading on external sites.
+			</p>
+		</div>
+		</div>
+		<div class="center">
+			<button type="button" class="main_button" id="tutorial_button" onclick="window.location='geojsontutorial.php'">GeoJson Tutorial</button>
 		</div>
 	</div>
 </div>

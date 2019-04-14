@@ -43,6 +43,17 @@ body, html {
 	min-height: 0px;
 }
 
+.booster2 {
+	min-height: 0px;
+}
+
+.homepageImage {
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 h1 {
 	background-color: #333;
 	font-size: 25px;
@@ -183,6 +194,10 @@ h5 {
 	}
 
 	.booster {
-		min-height: 120px;
+		min-height: 80px;
+	}
+
+	.booster2 {
+		min-height: 200px;
 	}
 }

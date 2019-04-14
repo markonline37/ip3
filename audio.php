@@ -9,7 +9,7 @@ include('inc/header.php');
 
 <h1>Audio Visualisation</h1>
 
-<div class="rows" id="content">
+<div class="rows">
 	<div class="col-10">
 		<p>
 			On this page you can select a song and press the play button which will start a visual representation of the audio frequency ranges for the song in real time.
@@ -53,7 +53,7 @@ include('inc/header.php');
   	</div>
 </div>
 
-<script type="text/javascript" src="js/audio.js"></script>
+<script src="js/audio.js"></script>
 <?php
 include('inc/footer.php'); 
 ?>

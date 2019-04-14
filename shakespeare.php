@@ -5,8 +5,8 @@ include('inc/header.php');
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link href="css/shakespeare.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/commonwords.js"></script>
-<script type="text/javascript" src="js/shakespeare.js"></script>
+<script src="js/commonwords.js"></script>
+<script src="js/shakespeare.js"></script>
 
 <h1>Shakespeare Visualiser</h1>
 
