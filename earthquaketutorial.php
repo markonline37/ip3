@@ -8,7 +8,12 @@ include('inc/header.php');
 <h1>Earthquake Tutorial</h1>
 
 The purpose of this page is to provide a tutorial to the earthquake visualization which can be found <a href="earthquake.php">here</a>.<br>
-In the visualization a set of earthquake data is retrieved and displayed on a map. A general overview and an explanation of the relevant concepts can be found below.<br><br>
+In the visualization a set of earthquake data is retrieved and displayed on a map. A general overview and an explanation of the relevant concepts can be found below.
+<br><br>
+This tutorial requires some javascript knowledge; for a tutorial 
+<a href="javascripttutorial.php">click here.</a> <br>
+It is also recommended to understand geoJson; for a tutorial on that <a href="geojsontutorial.php">click here.</a>
+<br><br>
 
 <h5>Menu</h5>
 <ul>

@@ -8,7 +8,7 @@ include('inc/header.php');
 <h1>Movies Tutorial</h1>
 This is a tutorial page that covers the techniques and data sources used to construct the <a href="movies.php">movie visualization page</a>. <br><br>
 
-This tutorial expects a basic understanding of JavaScript, if you need to learn the basics or a refresher; <a href="https://www.w3schools.com/js/js_intro.asp">w3schools - JavaScript Introduction</a> is an excellent choice.<br><br>
+This tutorial expects an understanding of javascript. For a basic tutorial visit <a href="javascripttutorial.php">this page.</a>. <br><br>
 
 <h5>Menu</h5>
 <ul>
