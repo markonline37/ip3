@@ -12,7 +12,7 @@ include('inc/header.php');
 		<h5>Merin Haslacher</h5>
 		<p>
 			<img class="profile-image" src="images/merin.png" alt="Merin Haslacher Profile Picture">
-			The roles I played in this project are that of a developer and report writer. My previous programming experiences have mostly been with java, but I have done web development before. Javascript is not new to me, but my experiences with ajax were limited before I started working on this project. The JSON file format was also relatively new to me, but my work on this project has also helped build my experience in this area. 
+			My name is Merin Haslacher and I'm a third year computing student at GCU. The roles I played in this project are that of a developer and report writer. My previous programming experiences have mostly been with java, but I have done web development before. Javascript is not new to me, but my experiences with ajax were limited before I started working on this project. The JSON file format was also relatively new to me, but my work on this project has also helped build my experience in this area. 
 		</p>
 		<p>
 			Most of my work was done on the earthquake and movie visualizations. This mainly includes selection of the APIs and writing of the javascript and php files.
